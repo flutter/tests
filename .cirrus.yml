@@ -12,4 +12,4 @@ task:
   matrix:
     - name: verify_tests_on_master
       test_script:
-        - ./scripts/verify.sh
+        - ./scripts/verify_tests_on_master.sh
