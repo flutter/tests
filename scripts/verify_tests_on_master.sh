@@ -1,3 +1,5 @@
+set -ex
+
 # Fetch Flutter.
 git clone git@github.com:flutter/flutter.git
 flutter/bin/flutter doctor -v
