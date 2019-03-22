@@ -1,0 +1,71 @@
+# This is a template for adding tests to the flutter/tests registry.
+#
+# To submit a new batch of tests, copy this file to create a new file in
+# this directory.
+#
+# New files should be named `foo.test` where `foo` is a description of
+# the project whose tests are being added.
+#
+# Lines beginning with a "#" are ignored. Delete all such lines from this
+# template before submitting a new `.test` file (you may add new comments
+# if you have something to say that doesn't fit in one of the meaningful
+# lines). Also delete blank lines like the following:
+
+# The contact lines must contain the e-mail addresses, one to a line, of
+# one or more people who will be able to help if a problem is found with
+# a test. People on this list should be able to respond to e-mails within
+# about 72 hours. If there is a problem with a test and we cannot reach
+# any of the people listed, then we will probably remove the tests.
+contact=foo@example.com
+contact=bar@example.com
+
+# The fetch line(s) must contain one or more shell commands that fetch
+# the tests into a new directory called "tests" in the current directory.
+# The example below clones the dnfield/flutter_svg GitHub repository then
+# checks out a specific revision.
+#
+# Our current policy is that all tests should be in public GitHub
+# repositories. (This way, we don't take on additional dependencies on
+# other services that may or not go down. We already depend on GitHub, so
+# if GitHub goes down it doesn't matter that we can't reach contributed
+# tests.) If you have some tests to contribute that are not and will not
+# be in GitHub, please contact ian@hixie.ch before submitting a PR
+# proposing to add such tests. We may make exceptions if your tests are
+# especially valuable.
+#
+# The checkout must always check out the exact same set of tests. Do not
+# check out the current master branch or some such; always fetch a
+# specific revision. You may regularly submit PRs that update the
+# revision being used.
+#
+# The commands specified on the "fetch" lines must return the exit code 0
+# or else the tests will be skipped entirely. The "git" program will be
+# on the path.
+fetch=git clone git@github.com:dnfield/flutter_svg.git tests
+fetch=git -C tests checkout 4687e1122cde7d10bfab2a594f153ce453fd87d7
+
+# The directory lines specify paths (relative to the newly created
+# "tests" directory) in which to run a flutter command to automatically
+# update the code to fix breaking changes. The command will be run in
+# turn in each specified directory. The root can be specified by using
+# the path "." as that represents the "current" directory. Multiple paths
+# may be specified by specifying multiple "directory" lines.
+directory=.
+
+# The test lines specify commands to run to execute the actual tests.
+# Each of these should return either 0 to indicate success, or a non-zero
+# exit code to report failure.
+#
+# The "flutter" tool and the "dart" program will be in the path.
+#
+# If there are multiple directories, create a shell script in the
+# repository to enter each directory and run the tests in that directory,
+# returning non-zero as soon as any set of tests fails. You can have
+# multiple such scripts. In the example below, we run "flutter test" in
+# the root of the repository, a "more_tests.sh" shell script from that
+# same directory (the "./" indicates it isn't a command to search for on
+# the path), and the "extra_tests.dart" program in the "dev" directory,
+# run via "dart".
+test=flutter test
+test=./more_tests.sh
+test=dart dev/extra_tests.dart

@@ -1,0 +1,15 @@
+container:
+  image: gcr.io/flutter-cirrus/build-flutter-image:latest
+
+task:
+  use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_PR == ''
+  env:
+    ANDROID_SDK_ROOT: "/opt/android_sdk"
+  git_fetch_script:
+    - git clean -xffd
+    - git fetch origin
+    - git fetch origin master # To set FETCH_HEAD for "git merge-base" to work
+  matrix:
+    - name: verify_tests_on_master
+      test_script:
+        - ./scripts/verify.sh
