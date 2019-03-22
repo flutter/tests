@@ -1,7 +1,7 @@
 set -ex
 
 # Fetch Flutter.
-git clone git@github.com:flutter/flutter.git
+git clone https://github.com/flutter/flutter.git
 flutter/bin/flutter doctor -v
 
 # Now run the tests a bunch of times to try to find flakes (tests that sometimes pass

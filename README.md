@@ -11,25 +11,25 @@ in the fields and delete all the comments. Then, submit a PR with this new file.
 
 Tests must fulfill the following criteria to be added:
 
-* All the code must be available publicly on GitHub under a license compatible 
+* All the code must be available publicly on GitHub under a license compatible
   with this effort.
 
 * Tests must be hermetic. For example, a test should not involve network activity.
 
-* Tests must be reliable. A test must not claim to pass if it is failing. 
+* Tests must be reliable. A test must not claim to pass if it is failing.
   Running a test multiple times in a row must always have the same result.
 
-* Tests must be as fast as possible given the hardware. For example, tests must 
+* Tests must be as fast as possible given the hardware. For example, tests must
   not use real timers or depend on the wall clock.
 
-* The time taken by tests must be proportional to their value. A few thousands 
-  tests are expected to run within a few minutes. An upper limit of about five 
-  minutes will be applied to each contributed test suite (not including the 
-  time to download the tests), but it is expected that most suites will 
+* The time taken by tests must be proportional to their value. A few thousands
+  tests are expected to run within a few minutes. An upper limit of about five
+  minutes will be applied to each contributed test suite (not including the
+  time to download the tests), but it is expected that most suites will
   complete in seconds.
 
-* The tests must be compatible with any tools for automatically updating 
-  Flutter code (e.g. they cannot rely on custom code generation unless such 
+* The tests must be compatible with any tools for automatically updating
+  Flutter code (e.g. they cannot rely on custom code generation unless such
   code generation can hook into the automatic update mechanism).
 
 * The tests must represent good practices.
