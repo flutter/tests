@@ -14,7 +14,12 @@ Tests must fulfill the following criteria to be added:
 * All the code must be available publicly on GitHub under a license compatible
   with this effort.
 
-* Tests must be hermetic. For example, a test should not involve network activity.
+* Tests must be hermetic. For example, a test should not involve
+  network activity, spawn processes, or access the local file system
+  except to access files that are packaged with the test.
+
+* Tests must be resilient to being run concurrently with other tests,
+  including concurrent runs of themselves.
 
 * Tests must be reliable. A test must not claim to pass if it is failing.
   Running a test multiple times in a row must always have the same result.
@@ -32,7 +37,12 @@ Tests must fulfill the following criteria to be added:
   Flutter code (e.g. they cannot rely on custom code generation unless such
   code generation can hook into the automatic update mechanism).
 
-* The tests must represent good practices.
+* The tests must represent good practices as described in Flutter's
+  documentation. For example, using an object after calling its
+  `dispose` method violates the contract described by that method.
+  Accessing the fields of a private `State` subclass from another
+  package by casting it to dynamic is similarly sketchy and would not
+  be supported behaviour.
 
 * The tests must pass at the time they are contributed.
 
