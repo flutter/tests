@@ -1,5 +1,0 @@
-contact=dfield@gmail.com
-fetch=git clone git@github.com:dnfield/flutter_svg.git tests
-fetch=git -C tests checkout 4687e1122cde7d10bfab2a594f153ce453fd87d7
-directory=.
-test=flutter test
