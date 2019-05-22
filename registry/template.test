@@ -22,10 +22,10 @@
 contact=foo@example.com
 contact=bar@example.com
 
-# The fetch line(s) must contain one or more shell commands that fetch
-# the tests into a new directory called "tests" in the current
-# directory. The example below clones the dnfield/flutter_svg GitHub
-# repository then checks out a specific revision.
+# The fetch line(s) must contain one or more commands that fetch the
+# tests into a new directory called "tests" in the current directory.
+# The example below clones the dnfield/flutter_svg GitHub repository
+# then checks out a specific revision.
 #
 # Our current policy is that all tests should be in public GitHub
 # repositories. (This way, we don't take on additional dependencies on
@@ -41,7 +41,11 @@ contact=bar@example.com
 # specific revision. You may regularly submit PRs that update the
 # revision being used.
 #
-# Each command is run in a separate shell.
+# Each fetch directive is processed as follows: the value is split on
+# spaces (without honoring quotes or backslash escapes or anything
+# like that), then the first segment is used as the executable to ask
+# the operating system to run, and the rest are treated as arguments
+# to pass to that process.
 #
 # The commands specified on the "fetch" lines must return the exit
 # code 0 or else the tests will be skipped entirely. The "git" program

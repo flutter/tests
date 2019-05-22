@@ -1,4 +1,4 @@
-contact=ian@hixie.ch
+contact=danny@tuppeny.com
 fetch=git clone https://github.com/DanTup/tiler.git tests
 fetch=git -C tests checkout a448ce4781f02d11fbf9c310502a6b4382809ecc
 fetch=git -C tests submodule init

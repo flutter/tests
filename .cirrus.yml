@@ -1,19 +1,8 @@
 task:
   use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_PR == ''
-  pub_cache:
-    folder: ~/.pub-cache
-  git_fetch_script:
-    - git clean -xffd
-    - git fetch origin
-    - git fetch origin master # To set FETCH_HEAD for "git merge-base" to work
   test_script:
     - ./scripts/verify_tests_on_master.sh
   matrix:
-    task:
-      env:
-        ANDROID_SDK_ROOT: "/opt/android_sdk"
-      container:
-        image: cirrusci/flutter:latest
-    task:
-      osx_instance:
-        image: mojave-xcode-10.2-flutter
+    container:
+    windows_container:
+    osx_instance:
