@@ -2,7 +2,11 @@
 
 This repository contains references to tests that are run with every
 commit to Flutter to verify that no breaking changes have been
-introduced.
+introduced. The tests referenced by this repository are typically
+maintained by people outside of the Flutter team, as part of the
+development of their applications. They are intended to give the
+Flutter team visibility into how their changes affect real-world
+developers using Flutter.
 
 ## Adding more tests
 
@@ -58,8 +62,8 @@ Tests must fulfill the following criteria to be added:
 The point of these tests is to make sure we don't break existing code,
 while still being able to make improvements to Flutter APIs.
 
-If you find that a PR you have created causes one these tests to fail,
-you have the following options:
+If you find that a PR you have created in flutter/flutter causes one
+these tests to fail, you have the following options:
 
 1. Change your PR so that the test no longer fails. This is the
    preferred option, so long as the result is one we can be proud of.
