@@ -57,6 +57,17 @@ Tests must fulfill the following criteria to be added:
 * The tests must pass at the time they are contributed.
 
 
+## Running the tests locally
+
+To run these tests locally, check out this directory in a directory
+parallel to your `flutter` repository checkout, then, from this
+directory, run:
+
+```
+../flutter/bin/cache/dart-sdk/bin/dart ../flutter/dev/customer_testing/run_tests.dart --skip-template --verbose registry/*.test
+```
+
+
 ## If a test is broken
 
 The point of these tests is to make sure we don't break existing code,
