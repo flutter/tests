@@ -1,0 +1,21 @@
+task:
+  name: tests-linux
+  use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_PR == ''
+  script: scripts/verify_tests_on_master.sh
+  container:
+    image: gcc:latest
+
+task:
+  name: tests-windows
+  use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_PR == ''
+  script: scripts\verify_tests_on_master.bat
+  windows_container:
+    image: cirrusci/windowsservercore:2019
+    os_version: 2019
+
+task:
+  name: tests-macos
+  use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_PR == ''
+  script: scripts/verify_tests_on_master.sh
+  osx_instance:
+    image: mojave-base

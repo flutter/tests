@@ -1,0 +1,107 @@
+# This is a template for adding tests to the flutter/tests registry.
+#
+# To submit a new batch of tests, copy this file to create a new file
+# in this directory, update it as described below, and submit it as a
+# new PR to this repository.
+#
+# New files should be named `foo.test` where `foo` is a description of
+# the project whose tests are being added. (The file named
+# `template.test` is skipped automatically.)
+#
+# Lines beginning with a "#" are ignored. Delete all such lines from
+# this template before submitting a new `.test` file (you may add new
+# comments if you have something to say that doesn't fit in one of the
+# meaningful lines). Also delete blank lines like the following:
+
+# The contact lines must contain the e-mail addresses, one to a line,
+# of one or more people who will be able to help if a problem is found
+# with a test. People on this list should be able to respond to
+# e-mails within about 72 hours. If there is a problem with a test and
+# we cannot reach any of the people listed, then we will probably
+# remove the tests.
+contact=foo@example.com
+contact=bar@example.com
+
+# The fetch line(s) must contain one or more commands that fetch the
+# tests into a new directory called "tests" in the current directory.
+# The example below clones the dnfield/flutter_svg GitHub repository
+# then checks out a specific revision.
+#
+# Our current policy is that all tests should be in public GitHub
+# repositories. (This way, we don't take on additional dependencies on
+# other services that may or not go down. We already depend on GitHub,
+# so if GitHub goes down it doesn't matter that we can't reach
+# contributed tests.) If you have some tests to contribute that are
+# not and will not be in GitHub, please contact ian@hixie.ch before
+# submitting a PR proposing to add such tests. We may make exceptions
+# if your tests are especially valuable.
+#
+# The checkout must always check out the exact same set of tests. Do
+# not check out the current master branch or some such; always fetch a
+# specific revision. You may regularly submit PRs that update the
+# revision being used.
+#
+# Each fetch directive is processed as follows: the value is split on
+# spaces (without honoring quotes or backslash escapes or anything
+# like that), then the first segment is used as the executable to ask
+# the operating system to run, and the rest are treated as arguments
+# to pass to that process.
+#
+# The commands specified on the "fetch" lines must return the exit
+# code 0 or else the tests will be skipped entirely. The "git" program
+# will be on the path.
+#
+# There must be at least one "fetch" line. (In fact currently there
+# must be at least two, and the first two must follow the pattern
+# below more or less exactly. Additional lines are allowed e.g. to
+# initialize and update submodules, but this should be rare. If this
+# is a problem, let us know in your PR.)
+fetch=git clone https://github.com/USERNAME/REPOSITORY.git tests
+fetch=git -C tests checkout 0123456789abcdef0123456789abcdef01234567
+
+# The "update" lines specify paths (relative to the newly created
+# "tests" directory) in which to run a flutter command to
+# automatically update the code to fix breaking changes. The command
+# will be run in turn in each specified directory. The root can be
+# specified by using the path "." as that represents the "current"
+# directory. Multiple paths may be specified by specifying multiple
+# "update" lines.
+#
+# The command that updates the code may fail, in which case the tests
+# are considered to have failed. This helps catch cases where
+# automatically updating the code doesn't work.
+#
+# There must be at least one "update" line.
+update=.
+
+# The test lines specify commands to run to execute the actual tests.
+# Each of these should return either 0 to indicate success, or a
+# non-zero exit code to report failure.
+#
+# The "flutter" tool and the "dart" program will be in the path.
+#
+# If there are multiple directories, create a shell script in the
+# repository to enter each directory and run the tests in that
+# directory, returning non-zero as soon as any set of tests fails. You
+# can have multiple such scripts. In the example below, we run
+# "flutter test" in the root of the repository, a "more_tests.sh"
+# shell script from that same directory (the "./" indicates it isn't a
+# command to search for on the path), and the "extra_tests.dart"
+# program in the "dev" directory, run via "dart".
+test=flutter test
+test=./more_tests.sh
+test=dart dev/extra_tests.dart
+
+# To test your tests, check out the flutter/flutter repository and
+# then, from the root of that repository, run:
+#   bin/flutter; time bin/cache/dart-sdk/bin/dart dev/customer_testing/run_tests.dart --repeat=100 <path>
+# ...where <path> is the path to this file. This should run with no
+# output, without failing, and should in total take less than 15
+# minutes (a hundred runs of your tests taking just a few seconds
+# each). If your tests take longer, mention this in your PR and we
+# will evaluate them to see how valuable they are (e.g. how unique and
+# different they are compared to other tests we already have). The
+# more valuable the tests, the more likely we are to accept them
+# despite them taking a long time to run.
+
+# See also the `README.md` file in the root of this repository.
