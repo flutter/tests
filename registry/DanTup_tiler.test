@@ -1,6 +1,6 @@
 contact=danny@tuppeny.com
 fetch=git clone https://github.com/DanTup/tiler.git tests
-fetch=git -C tests checkout 8832d54c3a93b4a613dd86840c7ff1b7fb6ebbe1
+fetch=git -C tests checkout 2e044f78511da1d365b8ee901a19806841830faf
 fetch=git -C tests submodule init
 fetch=git -C tests submodule update --recursive --remote
 update=.
