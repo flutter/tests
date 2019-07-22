@@ -2,6 +2,6 @@ contact=danny@tuppeny.com
 fetch=git clone https://github.com/DanTup/tiler.git tests
 fetch=git -C tests checkout 254e93ccfd3a316a562dd3b238a249f985ae0c10
 fetch=git -C tests submodule init
-fetch=git -C tests submodule update --recursive --remote
+fetch=git -C tests submodule update --recursive
 update=.
 test=flutter test test
