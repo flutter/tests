@@ -67,6 +67,9 @@ directory, run:
 ../flutter/bin/cache/dart-sdk/bin/dart ../flutter/dev/customer_testing/run_tests.dart --skip-template --verbose registry/*.test
 ```
 
+The first time you run the script, you need to do a `pub get`
+from within the `customer_testing` directory referenced in the
+above command.
 
 ## If a test is broken
 
