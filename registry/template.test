@@ -96,18 +96,31 @@ update=.
 # shell script from that same directory, and the "extra_tests.dart"
 # program in the "dev" directory, run via "dart".
 #
-# These commands must work identically on Windows, macOS, and Linux.
-# This generally means you want to limit yourself to simple commands
-# like `flutter test`. For anything more elaborate, consider creating
-# a "tests" shell script to run on macOS and Linux and a "tests.bat"
-# batch file to run on Windows (referencing it without the extension
-# here should mean that in runs the shell script on Unix systems and
-# the batch file on Windows, because of how Windows looks up
-# commands). On Windows, these commands are executed via `CMD.EXE /S
-# /C "command..."`.
+# Commands specified using "test=" must work identically on Windows,
+# macOS, and Linux. This generally means you want to limit yourself to
+# simple commands like `flutter test`. For anything more elaborate,
+# consider creating a "tests" shell script to run on macOS and Linux
+# and a "tests.bat" batch file to run on Windows (referencing it
+# without the extension here should mean that in runs the shell script
+# on Unix systems and the batch file on Windows, because of how
+# Windows looks up commands). On Windows, these commands are executed
+# via `CMD.EXE /S /C "command..."`.
+#
+# Alternatively, you can use a platform-specific test line:
+#   test.windows= to run a command on Windows only.
+#   test.macos= to run a command on MacOS only.
+#   test.linux= to run a command on Linux only.
+#   test.posix= to run a command on MacOS and Linux only.
+#
+# There must be sufficient test lines specified such that tests are
+# available on each of Windows, MacOS, and Linux. In the example
+# below, we run mytest.bat on Windows and mytest.sh on MacOS and Linux
+# (in both cases, from the "scripts" directory).
 test=flutter test
 test=more_tests
 test=dart dev/extra_tests.dart
+test.windows=scripts\mytest.bat
+test.posix=scripts/mytest.sh
 
 # To test your tests, check out the flutter/flutter repository and
 # then, from the root of that repository, run:

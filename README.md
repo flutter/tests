@@ -91,7 +91,8 @@ these tests to fail, you have the following options:
    people responsible for the breaking test(s) (see the relevant .test
    files), help them fix their code, and update this repository to use
    the new version of their tests, in addition to the steps described
-   on the wiki.
+   on the wiki. You will also need to land your change in two parts,
+   so that people have time to migrate (a "soft-breaking" change).
 
 3. Remove the test in question. This is by far the least ideal
    solution. To go down this path, we must first establish that one of
