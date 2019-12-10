@@ -18,7 +18,7 @@ CD ..\..\..
 REM Now run the tests a bunch of times to try to find flakes (tests that sometimes pass
 REM even though they should be failing).
 @ECHO.
-CALL dart flutter\dev\customer_testing\run_tests.dart --repeat=15 --skip-template registry/*.test || GOTO :END
+CALL dart flutter\dev\customer_testing\run_tests.dart --verbose --repeat=15 --skip-template registry/*.test || GOTO :END
 @ECHO ON
 
 @ECHO.
