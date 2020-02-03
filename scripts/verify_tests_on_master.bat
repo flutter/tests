@@ -1,6 +1,6 @@
 @ECHO ON
 
-REM Enable long path names for git on Windows
+REM Enable long path names for git on Windows.
 git config --system core.longpaths true
 
 REM Fetch Flutter.
