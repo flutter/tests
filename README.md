@@ -64,9 +64,12 @@ parallel to your `flutter` repository checkout, then, from this
 directory, run:
 
 ```
+pushd ../flutter/dev/customer_testing && pub get && popd
 ../flutter/bin/cache/dart-sdk/bin/dart ../flutter/dev/customer_testing/run_tests.dart --skip-template --verbose registry/*.test
 ```
 
+The first command retrieves the Dart packages used by `customer_testing`
+and can be omitted for subsequent executions.
 
 ## If a test is broken
 
