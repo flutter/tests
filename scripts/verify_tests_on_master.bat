@@ -1,8 +1,5 @@
 @ECHO ON
 
-REM Enable long path names for git on Windows.
-git config --system core.longpaths true
-
 REM Fetch Flutter.
 git clone https://github.com/flutter/flutter.git || GOTO :END
 CALL flutter\bin\flutter doctor -v || GOTO :END
