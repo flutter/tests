@@ -1,3 +1,5 @@
+# Tests from https://github.com/flutter/packages
+
 contact=goderbauer@google.com
 fetch=git clone https://github.com/flutter/packages.git tests
 fetch=git -C tests checkout 39fb87bb4dcced4c0477d2bdd277da8b05e93c69
