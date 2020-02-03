@@ -88,7 +88,7 @@ update=.
 #
 # The "flutter" tool and the "dart" program will be in the path.
 #
-# If there are multiple directories, create a shell script in your
+# If there are multiple directories, create a shell script in the
 # repository to enter each directory and run the tests in that
 # directory, returning non-zero as soon as any set of tests fails. You
 # can have multiple such scripts. In the example below, we run
