@@ -1,0 +1,8 @@
+# Tests from https://github.com/flutter/packages
+
+contact=goderbauer@google.com
+fetch=git -c core.longPaths=true clone https://github.com/flutter/packages.git tests
+fetch=git -c core.longPaths=true -C tests checkout 85472464ff861f81a7fc2e4e768e6ca7a8b7a455
+update=.
+test.windows=.\customer_testing.bat
+test.posix=./customer_testing.sh
