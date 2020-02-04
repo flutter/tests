@@ -2,6 +2,8 @@ set -ex
 
 # Fetch Flutter.
 git clone https://github.com/flutter/flutter.git
+git checkout -b goderbauer-allowLongPathNamesInCustomerTests master
+git pull https://github.com/goderbauer/flutter.git allowLongPathNamesInCustomerTests
 flutter/bin/flutter doctor -v
 
 export PATH="$PATH":`pwd`/flutter/bin:`pwd`/flutter/bin/cache/dart-sdk/bin

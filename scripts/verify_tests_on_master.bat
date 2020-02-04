@@ -2,6 +2,8 @@
 
 REM Fetch Flutter.
 git clone https://github.com/flutter/flutter.git || GOTO :END
+git checkout -b goderbauer-allowLongPathNamesInCustomerTests master
+git pull https://github.com/goderbauer/flutter.git allowLongPathNamesInCustomerTests
 CALL flutter\bin\flutter doctor -v || GOTO :END
 @ECHO ON
 
