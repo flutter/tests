@@ -2,12 +2,6 @@ set -ex
 
 # Fetch Flutter.
 git clone https://github.com/flutter/flutter.git
-cd flutter
-git config user.email "goderbauer@google.com"
-git config user.name "Michael Goderbauer"
-git checkout -b goderbauer-allowLongPathNamesInCustomerTests master
-git pull https://github.com/goderbauer/flutter.git allowLongPathNamesInCustomerTests
-cd ..
 flutter/bin/flutter doctor -v
 
 export PATH="$PATH":`pwd`/flutter/bin:`pwd`/flutter/bin/cache/dart-sdk/bin
