@@ -1,0 +1,6 @@
+contact=brogdon+github@gmail.com
+fetch=git clone https://github.com/flutter/samples.git tests
+fetch=git -C tests checkout 8e4d8c138b9cd90f0348858fb43613c3905e945b
+update=.
+test.posix=customer_testing
+test.windows=customer_testing.bat
