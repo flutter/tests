@@ -116,6 +116,10 @@ update=.
 # available on each of Windows, MacOS, and Linux. In the example
 # below, we run mytest.bat on Windows and mytest.sh on MacOS and Linux
 # (in both cases, from the "scripts" directory).
+#
+# You are encouraged to also use "flutter analyze" to catch problems
+# that affect code that isn't tested.
+test=flutter analyze
 test=flutter test
 test=more_tests
 test=dart dev/extra_tests.dart
