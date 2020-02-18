@@ -3,7 +3,7 @@
 
 contact=ian@hixie.ch
 fetch=git clone https://github.com/seamonkeysocial/rainbowmonkey.git tests
-fetch=git -C tests checkout 4917d9085e8ec12f942f68ecba489e71c18e298a
+fetch=git -C tests checkout a58d2594980ae592c335804f79c2ae2a67e638da
 update=.
 test=flutter analyze
 test=flutter test

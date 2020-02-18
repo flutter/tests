@@ -56,6 +56,9 @@ Tests must fulfill the following criteria to be added:
 
 * The tests must pass at the time they are contributed.
 
+* Dependencies must be pinned. (Generally, checking in the
+  `pubspec.lock` file is sufficient for this purpose.)
+
 
 ## Running the tests locally
 
