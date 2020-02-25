@@ -1,0 +1,5 @@
+contact=raboughanem@google.com
+fetch=git clone https://github.com/flutter/samples.git tests
+fetch=git -C tests checkout f98d66d5142032120c7b88b0c3c7a8310e5e3545
+update=.
+test=flutter analyze --no-current-package gallery
