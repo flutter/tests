@@ -1,5 +1,6 @@
 contact=raboughanem@google.com
 fetch=git clone https://github.com/flutter/samples.git tests
 fetch=git -C tests checkout 3a05f1f286c99a99a40c2035fd17488e9b654ba5
+fetch=git -C tests filter-branch --subdirectory-filter gallery
 update=.
-test=flutter analyze --no-current-package gallery
+test=flutter analyze
