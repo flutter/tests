@@ -1,0 +1,5 @@
+contact=goderbauer@google.com
+fetch=git -c core.longPaths=true clone https://github.com/flutter/assets-for-api-docs.git tests
+fetch=git -c core.longPaths=true -C tests checkout 36959488bfcf99f974bfc2d0792e3d180cc752bd
+update=.
+test=flutter analyze
