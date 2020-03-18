@@ -1,6 +1,0 @@
-contact=raboughanem@google.com
-fetch=git -c core.longPaths=true clone https://github.com/flutter/samples.git tests
-fetch=git -c core.longPaths=true -C tests checkout 73ee9832a250f6dc33fdc168ca097d7761c5e42a
-fetch=git -c core.longPaths=true -C tests filter-branch --subdirectory-filter gallery
-update=.
-test=flutter analyze
