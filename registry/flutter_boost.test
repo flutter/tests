@@ -1,0 +1,6 @@
+contact=noborder@qq.com
+fetch=git clone https://github.com/alibaba/flutter_boost.git tests
+fetch=git -C tests checkout 4aa4a9ec69cf912075083d695a55313ee06bb38e
+update=.
+# test=flutter analyze
+test=flutter test
