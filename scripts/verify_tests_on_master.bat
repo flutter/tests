@@ -1,6 +1,6 @@
 @ECHO ON
 
-:: Default variables.
+:: Default values.
 SET SHARDS=1
 SET SHARD_INDEX=0
 

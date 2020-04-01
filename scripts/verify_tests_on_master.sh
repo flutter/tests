@@ -1,4 +1,3 @@
-#!/bin/bash
 set -ex
 
 # Default values.
@@ -24,7 +23,7 @@ esac
 done
 
 # Fetch Flutter.
-#git clone https://github.com/flutter/flutter.git
+git clone https://github.com/flutter/flutter.git
 flutter/bin/flutter doctor -v
 
 export PATH="$PATH":`pwd`/flutter/bin:`pwd`/flutter/bin/cache/dart-sdk/bin
