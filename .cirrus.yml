@@ -1,14 +1,7 @@
 task:
-  name: tests-linux-0
+  name: tests-linux
   use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_PR == ''
-  script: scripts/verify_tests_on_master.sh --shards 2 --shard-index 0
-  container:
-    image: gcc:latest
-
-task:
-  name: tests-linux-1
-  use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_PR == ''
-  script: scripts/verify_tests_on_master.sh --shards 2 --shard-index 1
+  script: scripts/verify_tests_on_master.sh
   container:
     image: gcc:latest
 
