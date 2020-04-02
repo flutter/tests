@@ -1,6 +1,6 @@
 @ECHO ON
 
-:: Default values.
+REM Default values.
 SET SHARDS=1
 SET SHARD_INDEX=0
 
@@ -8,9 +8,11 @@ REM Parse the arguments for variables.
 :parse
 IF "%1"=="" GOTO endparse
 IF "%1"=="--shards" (
-    SET SHARDS=%2)
+    SET SHARDS=%2
+)
 IF "%1"=="--shard-index" (
-    SET SHARD_INDEX=%2)
+    SET SHARD_INDEX=%2
+)
 
 SHIFT
 GOTO parse
