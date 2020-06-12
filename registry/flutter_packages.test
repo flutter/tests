@@ -2,7 +2,7 @@
 
 contact=goderbauer@google.com
 fetch=git -c core.longPaths=true clone https://github.com/flutter/packages.git tests
-fetch=git -c core.longPaths=true -C tests checkout b1e60385b66aa8e0f1d4fa8b4117760526d16697
+fetch=git -c core.longPaths=true -C tests checkout a9d3ad022cc6f4a5ec754aba31bd67db4b9eae17
 update=.
 test.windows=.\customer_testing.bat
 test.posix=./customer_testing.sh

@@ -1,6 +1,24 @@
 @ECHO ON
 
-REM Fetch Flutter.
+:: Default values.
+SET SHARDS=1
+SET SHARD_INDEX=0
+
+:: Parse the arguments for variables.
+:parse
+IF "%1"=="" GOTO endparse
+IF "%1"=="--shards" (
+    SET SHARDS=%2
+)
+IF "%1"=="--shard-index" (
+    SET SHARD_INDEX=%2
+)
+
+SHIFT
+GOTO parse
+:endparse
+
+:: Fetch Flutter.
 git clone https://github.com/flutter/flutter.git || GOTO :END
 CALL flutter\bin\flutter doctor -v || GOTO :END
 @ECHO ON
@@ -15,10 +33,10 @@ CALL pub get || GOTO :END
 @ECHO ON
 CD ..\..\..
 
-REM Now run the tests a bunch of times to try to find flakes (tests that sometimes pass
-REM even though they should be failing).
+:: Now run the tests a bunch of times to try to find flakes (tests that sometimes pass
+:: even though they should be failing).
 @ECHO.
-CALL dart flutter\dev\customer_testing\run_tests.dart --repeat=15 --skip-template registry/*.test || GOTO :END
+CALL dart flutter\dev\customer_testing\run_tests.dart --repeat=15 --skip-template --shards %SHARDS% --shard-index %SHARD_INDEX% --verbose registry/*.test || GOTO :END
 @ECHO ON
 
 @ECHO.
