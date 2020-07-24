@@ -104,7 +104,7 @@ these tests to fail, you have the following options:
    solution. To go down this path, we must first establish that one of
    the following is true:
 
-    - the people listed as contacts for the test are not responsive.
+    - the people listed as contacts for the test are not responsive (within 72 hours).
 
     - the test is poorly written (e.g. it contains a race condition or
       relies on assumptions that violate clearly documented API
