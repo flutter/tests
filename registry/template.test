@@ -129,7 +129,7 @@ test.posix=scripts/mytest.sh
 # To test your tests, check out the flutter/flutter repository and
 # then, from the root of that repository, run:
 #
-#   bin/flutter; pushd dev/customer_testing; pub get; time dart run_tests.dart --repeat=100 <path>; popd
+#   bin/flutter; pushd dev/customer_testing; pub get; time ../../bin/cache/dart-sdk/bin/dart run_tests.dart --repeat=100 <path>; popd
 #
 # ...where <path> is the path to this file.
 #
