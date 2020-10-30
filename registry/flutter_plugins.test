@@ -1,0 +1,13 @@
+contact=amirha@google.com
+contact=bmparr@google.com
+contact=dit@google.com
+contact=egarciad@google.com
+contact=ychris@google.com
+
+fetch=git clone https://github.com/flutter/plugins.git tests
+fetch=git -C tests checkout 05067420ed247e43153489fa38ab617342973862
+
+update=.
+
+test=pub global activate flutter_plugin_tools
+test=pub global run flutter_plugin_tools analyze
