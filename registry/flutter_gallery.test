@@ -1,6 +1,6 @@
 contact=raboughanem@google.com
 contact=perc@google.com
 fetch=git -c core.longPaths=true clone https://github.com/flutter/gallery.git tests
-fetch=git -c core.longPaths=true -C tests checkout 0423ac456c40a913a9750844e6ed9fa2c9a3a45e
+fetch=git -c core.longPaths=true -C tests checkout 8542ca8beebc8e989adee160f7f1f0841a734db2
 update=.
 test=flutter analyze
