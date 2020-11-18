@@ -37,6 +37,7 @@ CD ..\..\..
 :: even though they should be failing).
 @ECHO.
 CALL dart flutter\dev\customer_testing\run_tests.dart --repeat=15 --skip-template --shards %SHARDS% --shard-index %SHARD_INDEX% --verbose registry/*.test || GOTO :END
+CALL dart flutter\dev\customer_testing\run_tests.dart --repeat=4 --skip-template --shards %SHARDS% --shard-index %SHARD_INDEX% --verbose registry/slow/*.test || GOTO :END
 @ECHO ON
 
 @ECHO.

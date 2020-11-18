@@ -42,6 +42,9 @@ Tests must fulfill the following criteria to be added:
   suite (not including the time to download the tests), but it is
   expected that most suites will complete in seconds.
 
+* Tests that cannot complete that take longer than 2.5 minutes should go
+  in the registry/slow folder and must be approved by @Hixie.
+
 * The tests must be compatible with any tools for automatically
   updating Flutter code (e.g. they cannot rely on custom code
   generation unless such code generation can hook into the automatic
