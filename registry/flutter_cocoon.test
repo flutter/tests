@@ -4,4 +4,6 @@ fetch=git -C tests checkout d80254e5f6a62df6e19db1ed857597c7732ebca1
 update=.
 # Runs flutter analyze, flutter test, and builds web platform
 test.posix=./test_utilities/bin/flutter_test_runner.sh app_flutter
+test.posix=./test_utilities/bin/flutter_test_runner.sh repo_dash
 test.windows=.\test_utilities\bin\flutter_test_runner.bat app_flutter
+test.windows=.\test_utilities\bin\flutter_test_runner.bat repo_dash
