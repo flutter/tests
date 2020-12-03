@@ -5,5 +5,4 @@ update=.
 # Runs flutter analyze, flutter test, and builds web platform
 test.posix=./test_utilities/bin/flutter_test_runner.sh app_flutter
 test.posix=./test_utilities/bin/flutter_test_runner.sh repo_dashboard
-test.windows=.\test_utilities\bin\flutter_test_runner.bat app_flutter
 test.windows=.\test_utilities\bin\flutter_test_runner.bat repo_dashboard
