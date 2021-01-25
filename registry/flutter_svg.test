@@ -1,6 +1,6 @@
 contact=dfield@gmail.com
 fetch=git clone https://github.com/dnfield/flutter_svg.git tests
-fetch=git -C tests checkout 1a6e8706696e96edead88bf2d67ebb65582512cb
+fetch=git -C tests checkout 2500a7a2ad3c68a6dc062f4f66083d07e2b2af3e
 update=.
 # test=flutter analyze # as of 2020-02-15, analysis failed, so we couldn't enable this
 test=flutter test
