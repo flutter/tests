@@ -1,0 +1,15 @@
+# Tests from the win32 package, which exercise various aspects of FFI. A number
+# of other packages depend transitively on this for Windows plugin support.
+
+contact=timsneath@google.com
+fetch=git clone https://github.com/timsneath/win32.git tests
+fetch=git -C tests checkout 9b10ac81cb4174203f6bbe18b253afb2f69a3ea3
+update=.
+
+# This package is designed to run on Windows only. The test suite has a single
+# test on Linux and macOS to ensure that `flutter test` runs successfully, and
+# that the existence of the package on those systems does not cause failure. But
+# the payload of this package is only operative on Windows.
+
+test=flutter analyze
+test=flutter test
