@@ -3,6 +3,6 @@ fetch=git clone https://github.com/flutter/cocoon.git tests
 fetch=git -C tests checkout 99da68ffe5d6a15803ee2e2eed717ab7f57f5527
 update=.
 # Runs flutter analyze, flutter test, and builds web platform
-test.posix=./test_utilities/bin/flutter_test_runner.sh app_flutter
-test.posix=./test_utilities/bin/flutter_test_runner.sh repo_dashboard
-test.windows=.\test_utilities\bin\flutter_test_runner.bat repo_dashboard
+# test.posix=./test_utilities/bin/flutter_test_runner.sh app_flutter
+# test.posix=./test_utilities/bin/flutter_test_runner.sh repo_dashboard
+# test.windows=.\test_utilities\bin\flutter_test_runner.bat repo_dashboard
