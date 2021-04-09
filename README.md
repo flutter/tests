@@ -1,8 +1,9 @@
-# Flutter Tests
+# Flutter Customer Test Registry
 
-This repository contains references to tests that are run with every
-commit to Flutter to verify that no breaking changes have been
-introduced. The tests referenced by this repository are typically
+This repository contains references to tests (in the `registry`
+directory) that are run with every commit to Flutter to verify that no
+breaking changes have been introduced (in the "customer_testing"
+shards). The tests referenced by this repository are typically
 maintained by people outside of the Flutter team, as part of the
 development of their applications. They are intended to give the
 Flutter team visibility into how their changes affect real-world
@@ -119,3 +120,12 @@ these tests to fail, you have the following options:
       but are unable to update the test accordingly (e.g. the people
       listed as contacts are not willing to work with us to update
       their code).
+
+
+# SKP Generators
+
+The `skp_generator` directory contains a Flutter program (and
+associated shell scripts) to generate test SKPs for the Skia team.
+
+Contributions in the form of stateless widgets showing scenes from
+your application are welcome. See the README.md in that directory.

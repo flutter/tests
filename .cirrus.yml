@@ -35,3 +35,10 @@ task:
   script: scripts/verify_tests_on_master.sh
   osx_instance:
     image: mojave-base
+
+task:
+  name: skp_generator
+  use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_PR == ''
+  script: (cd skp_generator && ./build.sh)
+  container:
+    image: gcc:latest
