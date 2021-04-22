@@ -3,6 +3,6 @@ contact=perc@google.com
 fetch=git -c core.longPaths=true clone https://github.com/flutter/gallery.git tests
 # If you bump this here, you may also want to bump it for the devicelab tests, at:
 # dev/devicelab/lib/versions/gallery.dart in the flutter repo.
-fetch=git -c core.longPaths=true -C tests checkout 4655d32d9d4724809ff2825d5469ff6f311c2cae
+fetch=git -c core.longPaths=true -C tests checkout e06144fe0c2084d5f9d0c90a070f33009a497af1
 update=.
 test=flutter analyze
