@@ -139,7 +139,7 @@ class _TestScreenState extends State<TestScreen> with TickerProviderStateMixin {
   Future<void> _capture() async {
     _captured = true;
     final Response response = await vmService.callServiceExtension('_flutter.screenshotSkp');
-    final String filename = 'skps/$_name.skp';
+    final String filename = 'skps/flutter_$_name.skp';
     await File(filename).writeAsBytes(base64Decode(response.json!['skp'] as String));
     if (mounted) {
       setState(() {
