@@ -6,16 +6,16 @@
 # Output each command, and quit immediately if any fail.
 set -ex
 
-# This function deletes everything except the skps directory and
-# what's already checked into git. This includes, for example, the
-# output of `flutter create`, any locally-checked-out flutter in this
-# directory, and the `build` directory (all of these get created by
-# subsequent action in this script).
+# This function deletes everything in the entire repository except the
+# skps directory and what's already checked into git. This includes,
+# for example, the output of `flutter create`, any locally-checked-out
+# flutter in the parent directory, and the `build` directory (all of
+# these get created by subsequent action in this script).
 #
 # This function is called immediately on startup below, as well as
 # automatically when the script exits (see the "trap" below).
 function cleanup() {
-    git clean -xffdq -e skps
+    git clean -xffdq -e skps ..
 }
 
 # This function returns the actual absolute path of a file path that
@@ -97,3 +97,5 @@ BIN_DIR="$(cd "${FLUTTER%/*}" ; pwd -P)"
 # The output will be placed in the skps/ directory.
 # We use --run-forever because the app terminates itself when it's done.
 "$BIN_DIR/cache/artifacts/engine/$PLATFORM/flutter_tester" --run-forever --non-interactive --packages=.dart_tool/package_config.json --flutter-assets-dir=build/flutter_assets/ build/flutter_assets/kernel_blob.bin
+
+[ -s skps/flutter_Slate.01.skp ] || (echo 'ERROR! Output is missing expected files!' && exit 1)
