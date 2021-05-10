@@ -5,7 +5,7 @@
 import 'package:flutter/material.dart';
 
 class ExpandingExpansionPanel extends StatelessWidget {
-  ExpandingExpansionPanel({Key? key, required this.scale}) : super(key: key);
+  const ExpandingExpansionPanel({Key? key, required this.scale}) : super(key: key);
 
   final double scale;
 
@@ -23,9 +23,9 @@ class ExpandingExpansionPanel extends StatelessWidget {
                   heightFactor: 0.8,
                   child: AlertDialog(
                     scrollable: true,
-                    titlePadding: EdgeInsets.symmetric(horizontal: 20.0),
-                    insetPadding: EdgeInsets.symmetric(horizontal: 20.0),
-                    contentPadding: EdgeInsets.all(20.0),
+                    titlePadding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    insetPadding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    contentPadding: const EdgeInsets.all(20.0),
                     backgroundColor: Colors.teal,
                     content: Column(
                       children: <Widget>[
@@ -49,8 +49,8 @@ class ExpandingExpansionPanel extends StatelessWidget {
                                   return CheckboxListTile(
                                     onChanged: (isSelected) {},
                                     value: true,
-                                    title: Text('This is the title'),
-                                    subtitle: Text('This is the subtitle'),
+                                    title: const Text('This is the title'),
+                                    subtitle: const Text('This is the subtitle'),
                                   );
                                 },
                                 itemCount: 5,

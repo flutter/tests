@@ -6,7 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart' show FlutterLogo;
 
 class CupertinoDialogTest extends StatelessWidget {
-  CupertinoDialogTest({ Key? key, this.visible = true }) : super(key: key);
+  const CupertinoDialogTest({ Key? key, this.visible = true }) : super(key: key);
 
   final bool visible;
 
@@ -17,7 +17,7 @@ class CupertinoDialogTest extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Stack(
         children: <Widget>[
-          Positioned.fill(
+          const Positioned.fill(
             child: FlutterLogo(),
           ),
           if (visible)
@@ -28,7 +28,7 @@ class CupertinoDialogTest extends StatelessWidget {
                 actions: <Widget>[
                   CupertinoDialogAction(
                     isDefaultAction: true,
-                    child: new Text('Close'),
+                    child: const Text('Close'),
                     onPressed: () { },
                   ),
                 ],
