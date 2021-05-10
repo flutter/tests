@@ -21,7 +21,7 @@ GOTO parse
 :: Update certs
 md C:\Certs
 certutil -syncwithWU C:\Certs
-powershell.exe -c "Get-ChildItem -Path C:\certs -Filter '*.crt' | % {certutil -addstore -f root $_.fullname; $_.fullname}"
+powershell.exe -c "Get-ChildItem -Path C:\certs -Filter '\*.crt' | % {certutil -addstore -f root $_.fullname; $_.fullname}"
 rmdir c:\certs /s /q
 
 :: Fetch Flutter.
