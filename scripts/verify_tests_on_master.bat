@@ -18,6 +18,13 @@ SHIFT
 GOTO parse
 :endparse
 
+:: Update certs
+md C:\Certs
+certutil -syncwithWU C:\Certs
+Get-ChildItem -Path C:\certs -Filter '*.crt' | % {certutil -addstore -f root $_.fullname; $_.fullname}
+rd c:\certs -Recurse
+
+
 :: Fetch Flutter.
 git clone https://github.com/flutter/flutter.git || GOTO :END
 CALL flutter\bin\flutter doctor -v || GOTO :END
