@@ -18,6 +18,12 @@ SHIFT
 GOTO parse
 :endparse
 
+:: Update certs
+md C:\Certs
+certutil -syncwithWU C:\Certs
+powershell.exe -c "Get-ChildItem -Path C:\certs -Filter '*.crt' | foreach-object {certutil -addstore -f root $_.fullname; $_.fullname}"
+rmdir c:\certs /s /q
+
 :: Fetch Flutter.
 git clone https://github.com/flutter/flutter.git || GOTO :END
 CALL flutter\bin\flutter doctor -v || GOTO :END
