@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+// ignore_for_file: avoid_print
+
 import 'dart:convert';
 import 'dart:developer' as developer;
 import 'dart:io';
@@ -44,11 +46,11 @@ void main() async {
 
   runApp(TestScreen(widgets: <Widget>[
     Slate(title: title),
-    PageFlipTest(angle: 0.0),
-    PageFlipTest(angle: 0.097),
-    PageFlipTest(angle: 0.097 * 2.0),
-    CupertinoDialogTest(),
-    StoryBoard<ExpandingExpansionPanel>(widgets: <ExpandingExpansionPanel>[
+    const PageFlipTest(angle: 0.0),
+    const PageFlipTest(angle: 0.097),
+    const PageFlipTest(angle: 0.097 * 2.0),
+    const CupertinoDialogTest(),
+    const StoryBoard<ExpandingExpansionPanel>(widgets: <ExpandingExpansionPanel>[
       ExpandingExpansionPanel(scale: 0.0),
       ExpandingExpansionPanel(scale: 0.05),
       ExpandingExpansionPanel(scale: 0.1),
@@ -59,7 +61,7 @@ void main() async {
       ExpandingExpansionPanel(scale: 0.8),
       ExpandingExpansionPanel(scale: 1.0),
     ]),
-    StoryBoard<ExpandingPhysicalModel>(widgets: <ExpandingPhysicalModel>[
+    const StoryBoard<ExpandingPhysicalModel>(widgets: <ExpandingPhysicalModel>[
       ExpandingPhysicalModel(scale: 0.0),
       ExpandingPhysicalModel(scale: 0.05),
       ExpandingPhysicalModel(scale: 0.1),
@@ -70,7 +72,7 @@ void main() async {
       ExpandingPhysicalModel(scale: 0.8),
       ExpandingPhysicalModel(scale: 1.0),
     ]),
-    StoryBoard<ExpandingBlurs>(widgets: <ExpandingBlurs>[
+    const StoryBoard<ExpandingBlurs>(widgets: <ExpandingBlurs>[
       ExpandingBlurs(scale: 0.0),
       ExpandingBlurs(scale: 0.05),
       ExpandingBlurs(scale: 0.1),
@@ -85,7 +87,7 @@ void main() async {
 }
 
 class TestScreen extends StatefulWidget {
-  TestScreen({Key? key, required this.widgets }) : super(key: key);
+  const TestScreen({Key? key, required this.widgets }) : super(key: key);
 
   final List<Widget> widgets;
 
@@ -120,8 +122,9 @@ class _TestScreenState extends State<TestScreen> with TickerProviderStateMixin {
         'total: ${_describe(timing.totalSpan, target: const Duration(milliseconds: 16))}',
       );
     }
-    if (!_captured && _name != null)
+    if (!_captured && _name != null) {
       _capture();
+    }
   }
 
   String _describe(Duration duration, {
@@ -129,10 +132,12 @@ class _TestScreenState extends State<TestScreen> with TickerProviderStateMixin {
     Duration woah = const Duration(milliseconds: 100),
   }) {
     assert(target < woah);
-    if (duration > woah)
+    if (duration > woah) {
       return '${duration.inMilliseconds}ms!!';
-    if (duration > target)
+    }
+    if (duration > target) {
       return '${duration.inMilliseconds}ms!';
+    }
     return '${duration.inMilliseconds}ms';
   }
 
@@ -173,7 +178,7 @@ class _TestScreenState extends State<TestScreen> with TickerProviderStateMixin {
 }
 
 class Slate extends StatelessWidget {
-  Slate({ Key? key, required this.title }) : super(key: key);
+  const Slate({ Key? key, required this.title }) : super(key: key);
 
   final String title;
   
@@ -184,7 +189,7 @@ class Slate extends StatelessWidget {
 }
 
 class StoryBoard<T extends Widget> extends StatelessWidget {
-  StoryBoard({ Key? key, required this.widgets }) : super(key: key);
+  const StoryBoard({ Key? key, required this.widgets }) : super(key: key);
 
   final List<T> widgets;
   
@@ -202,7 +207,7 @@ class StoryBoard<T extends Widget> extends StatelessWidget {
               children: <Widget>[
                 for (int x = 0; x < dim; x += 1)
                   Expanded(
-                    child: y * dim + x < widgets.length ? widgets[y * dim + x] : Placeholder(),
+                    child: y * dim + x < widgets.length ? widgets[y * dim + x] : const Placeholder(),
                   ),
               ],
             )

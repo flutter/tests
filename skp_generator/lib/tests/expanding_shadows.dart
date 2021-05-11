@@ -21,13 +21,13 @@ class ExpandingPhysicalModel extends StatelessWidget {
       child: Transform.scale(
         scale: scale,
         child: Container(
-          margin: EdgeInsets.all(30.0),
-          padding: EdgeInsets.all(30.0),
+          margin: const EdgeInsets.all(30.0),
+          padding: const EdgeInsets.all(30.0),
           child: PhysicalModel(
             color: const Color(0xFFCDDC39),
             borderRadius: BorderRadius.circular(10.0),
             elevation: 4.0,
-            child: SizedBox.expand(),
+            child: const SizedBox.expand(),
           ),
         ),
       ),
@@ -47,12 +47,12 @@ class ExpandingBlurs extends StatelessWidget {
       child: Transform.scale(
         scale: scale,
         child: Container(
-          margin: EdgeInsets.all(30.0),
-          padding: EdgeInsets.all(30.0),
+          margin: const EdgeInsets.all(30.0),
+          padding: const EdgeInsets.all(30.0),
           decoration: BoxDecoration(
             color: const Color(0xFFCDDC39),
             borderRadius: BorderRadius.circular(10.0),
-            boxShadow: <BoxShadow>[
+            boxShadow: const <BoxShadow>[
               BoxShadow(offset: Offset(4.0, 4.0), blurRadius: 2.0, spreadRadius: 0.0, color: Color(0x24000000)),
               BoxShadow(offset: Offset(-4.0, 4.0), blurRadius: 4.0, spreadRadius: 0.0, color: Color(0x24000000)),
               BoxShadow(offset: Offset(4.0, -4.0), blurRadius: 8.0, spreadRadius: 0.0, color: Color(0x24000000)),
@@ -60,7 +60,7 @@ class ExpandingBlurs extends StatelessWidget {
               BoxShadow(offset: Offset(0.0, 0.0), blurRadius: 16.0, spreadRadius: 4.0, color: Color(0x24000000)),
             ],
           ),
-          child: SizedBox.expand(),
+          child: const SizedBox.expand(),
         ),
       ),
     );

@@ -26,14 +26,14 @@ class PageFlipTest extends StatelessWidget {
       child: GridPaper(
         interval: 256.0,
         child: Container(
-          margin: EdgeInsets.all(20.0),
+          margin: const EdgeInsets.all(20.0),
           alignment: Alignment.center,
           decoration: BoxDecoration(
             color: const Color(0xFF006666),
             border: Border.all(color: const Color(0xFF0000FF), width: 8.0),
           ),
-          child: Text('My name\'s not Kirk... It\'s Skywalker.',
-            style: TextStyle(fontSize: 64.0, color: const Color(0xFFFFFF00)),
+          child: const Text('My name\'s not Kirk... It\'s Skywalker.',
+            style: TextStyle(fontSize: 64.0, color: Color(0xFFFFFF00)),
             textAlign: TextAlign.center,
             textDirection: TextDirection.ltr,
           ),
