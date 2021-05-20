@@ -3,5 +3,5 @@ fetch=git -c core.longPaths=true clone https://github.com/PhilipsHue/flutter_rea
 fetch=git -c core.longPaths=true -C tests checkout 3e70254fdf5aa348b4d2d93c8ef7d4f490a5237a
 update=.
 test=flutter packages get
-test=flutter analyze
+test=flutter analyze --no-fatal-infos
 test=flutter test

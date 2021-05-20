@@ -119,7 +119,7 @@ update=.
 #
 # You are encouraged to also use "flutter analyze" to catch problems
 # that affect code that isn't tested.
-test=flutter analyze
+test=flutter analyze --no-fatal-infos
 test=flutter test
 test=more_tests
 test=dart dev/extra_tests.dart

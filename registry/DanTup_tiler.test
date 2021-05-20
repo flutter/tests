@@ -4,5 +4,5 @@ fetch=git -C tests checkout 44b41536e7428d1070e8e2bd91376132c5a484fc
 fetch=git -C tests submodule init
 fetch=git -C tests submodule update --recursive
 update=.
-# test=flutter analyze # as of 2020-02-15, analysis failed, so we couldn't enable this
+# test=flutter analyze --no-fatal-infos # as of 2020-02-15, analysis failed, so we couldn't enable this
 test=flutter test test

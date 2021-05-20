@@ -55,6 +55,10 @@ Tests must fulfill the following criteria to be added:
   package by casting it to dynamic is similarly sketchy and would not
   be supported behaviour.
 
+* The tests must pass even if there are analysis 'info' level issues in the code.
+  Generally, this means that if the test performs static analysis, it does so
+  ignoring info level items (i.e., `flutter analyze --no-fatal-infos`).
+
 * The tests must pass at the time they are contributed.
 
 * The upstream repository that hosts the tests must be able to receive patches

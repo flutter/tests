@@ -5,4 +5,4 @@ fetch=git -c core.longPaths=true clone https://github.com/flutter/gallery.git te
 # dev/devicelab/lib/versions/gallery.dart in the flutter repo.
 fetch=git -c core.longPaths=true -C tests checkout e44cd514e155f99dedbd10833063170d7de35ffb
 update=.
-test=flutter analyze
+test=flutter analyze --no-fatal-infos
