@@ -1,6 +1,6 @@
 contact=raman.fedaseyeu@signify.com
 fetch=git -c core.longPaths=true clone https://github.com/PhilipsHue/flutter_reactive_ble.git tests
-fetch=git -c core.longPaths=true -C tests checkout 3e70254fdf5aa348b4d2d93c8ef7d4f490a5237a
+fetch=git -c core.longPaths=true -C tests checkout 71d6021a1654857a631a31cdc1172f09d9595b59
 update=.
 test=flutter packages get
 test=flutter analyze --no-fatal-infos
