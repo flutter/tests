@@ -2,7 +2,8 @@ contact=flutter-infra@google.com
 fetch=git clone https://github.com/flutter/cocoon.git tests
 fetch=git -C tests checkout d021f7e055b7ef5f75144f9c6f23cb771d379614
 update=.
+# Disabled due to https://github.com/flutter/flutter/issues/82280
 # Runs flutter analyze, flutter test, and builds web platform
-test.posix=./test_utilities/bin/flutter_test_runner.sh app_flutter
-test.posix=./test_utilities/bin/flutter_test_runner.sh repo_dashboard
-test.windows=.\test_utilities\bin\flutter_test_runner.bat repo_dashboard
+# test.posix=./test_utilities/bin/flutter_test_runner.sh app_flutter
+# test.posix=./test_utilities/bin/flutter_test_runner.sh repo_dashboard
+# test.windows=.\test_utilities\bin\flutter_test_runner.bat repo_dashboard
