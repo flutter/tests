@@ -3,6 +3,6 @@
 contact=goderbauer@google.com
 fetch=git -c core.longPaths=true clone https://github.com/flutter/packages.git tests
 fetch=git -c core.longPaths=true -C tests checkout 5617d089f26dd52da3bf05c9fa4620ef11a7419b
-update=.
+update=packages/animations
 test.windows=.\customer_testing.bat
 test.posix=./customer_testing.sh
