@@ -1,8 +1,14 @@
+# This project isn't being actively maintained by Danny any more, so
+# if we end up in a situation where we need a major refactor or some
+# such, then it's ok to just remove this entry. That said, do prefer
+# to fix things when you can if it's possible, PRs do this repo do
+# still get accepted.
+
 contact=danny@tuppeny.com
 fetch=git clone https://github.com/DanTup/tiler.git tests
-fetch=git -C tests checkout 44b41536e7428d1070e8e2bd91376132c5a484fc
+fetch=git -C tests checkout 509cb15a80c8d09465b0e5ddc1792eb7b24d3775
 fetch=git -C tests submodule init
 fetch=git -C tests submodule update --recursive
 update=.
-# test=flutter analyze --no-fatal-infos # as of 2020-02-15, analysis failed, so we couldn't enable this
+test=flutter analyze --no-fatal-infos
 test=flutter test test
