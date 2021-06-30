@@ -55,15 +55,17 @@ Tests must fulfill the following criteria to be added:
   package by casting it to dynamic is similarly sketchy and would not
   be supported behaviour.
 
-* The tests must pass even if there are analysis 'info' level issues in the code.
-  Generally, this means that if the test performs static analysis, it does so
-  ignoring info level items (i.e., `flutter analyze --no-fatal-infos`).
+* The tests must pass even if there are analysis 'info' level issues
+  in the code. Generally, this means that if the test performs static
+  analysis, it does so ignoring info level items (i.e., `flutter
+  analyze --no-fatal-infos`).
 
 * The tests must pass at the time they are contributed.
 
-* The upstream repository that hosts the tests must be able to receive patches
-  to support the `master` channel of Flutter. This means that CI on the
-  upstream repository should use the `master` channel Flutter SDK.
+* The upstream repository that hosts the tests must be able to receive
+  patches to support the `master` channel of Flutter. This means that
+  CI on the upstream repository should use the `master` channel
+  Flutter SDK.
 
 * Dependencies must be pinned. (Generally, checking in the
   `pubspec.lock` file is sufficient for this purpose.)
@@ -113,7 +115,8 @@ these tests to fail, you have the following options:
    solution. To go down this path, we must first establish that one of
    the following is true:
 
-    - the people listed as contacts for the test are not responsive (within 72 hours).
+    - the people listed as contacts for the test are not responsive
+      (within 72 hours).
 
     - the test is poorly written (e.g. it contains a race condition or
       relies on assumptions that violate clearly documented API
