@@ -64,6 +64,12 @@ flutter pub add vm_service
 rm -rf test skps
 mkdir skps
 
+# Obtain all dependencies
+flutter packages get
+
+# Update the code in case there have been API changes.
+dart fix --apply
+
 # Check for analysis errors. This script fails if this finds any errors.
 flutter analyze
 
