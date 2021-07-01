@@ -71,6 +71,8 @@ fetch=git -C tests checkout 0123456789abcdef0123456789abcdef01234567
 # directory. Multiple paths may be specified by specifying multiple
 # "update" lines.
 #
+# Each specified directory must contain a "pubspec.yaml" file.
+#
 # The path must be specified using forward slashes for path
 # separators, as on Unix systems. The path is automatically converted
 # for use on Windows.
@@ -78,6 +80,10 @@ fetch=git -C tests checkout 0123456789abcdef0123456789abcdef01234567
 # The command that updates the code may fail, in which case the tests
 # are considered to have failed. This helps catch cases where
 # automatically updating the code doesn't work.
+#
+# The actual commands run in each directory given here are:
+#   flutter packages get
+#   dart fix --apply
 #
 # There must be at least one "update" line.
 update=.
@@ -118,7 +124,10 @@ update=.
 # (in both cases, from the "scripts" directory).
 #
 # You are encouraged to also use "flutter analyze" to catch problems
-# that affect code that isn't tested.
+# that affect code that isn't tested, but if you do, please use the
+# "--no-fatal-infos" argument so that we can continue to change lints
+# without having to e.g. reformat all your code any time we fix a
+# minor bug in some esoteric stylistic lint. :-)
 test=flutter analyze --no-fatal-infos
 test=flutter test
 test=more_tests
