@@ -1,4 +1,5 @@
 contact=creativecreatorormaybenot@gmail.com
+contact=ch271828n@gmail.com
 fetch=git clone https://github.com/rrousselGit/flutter_portal.git tests
 fetch=git -C tests checkout 9b9463cbc7a660c9a2e3a614a0ce83aa623cb8ba
 update=.
