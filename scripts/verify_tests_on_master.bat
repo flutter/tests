@@ -35,7 +35,7 @@ SET PATH=%PATH%;%CD%\flutter/bin;%CD%\flutter\bin\cache\dart-sdk\bin
 @ECHO.
 
 CD flutter\dev\customer_testing
-CALL pub get || GOTO :END
+CALL dart pub get || GOTO :END
 @ECHO ON
 CD ..\..\..
 
