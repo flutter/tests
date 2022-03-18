@@ -29,7 +29,7 @@ flutter/bin/flutter doctor -v
 export PATH="$PATH":`pwd`/flutter/bin:`pwd`/flutter/bin/cache/dart-sdk/bin
 
 cd flutter/dev/customer_testing
-pub get
+dart pub get
 cd ../../..
 
 # Now run the tests a bunch of times to try to find flakes (tests that sometimes pass
