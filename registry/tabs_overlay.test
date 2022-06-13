@@ -1,6 +1,6 @@
 contact=nt4f04und@gmail.com
 fetch=git clone https://github.com/nt4f04uNd/platform_tests.git tests
-fetch=git -C tests checkout 0b43b2daab5ae6a13b31a1479376cf1b8357d6bc
+fetch=git -C tests checkout 05e9ab536171958123daacdfe559c3912a386705
 update=./tabs_overlay
 test=cd tabs_overlay && flutter analyze --no-fatal-infos
-test=cd tabs_overlay && flutter test integration_test/smoke_test.dart
+test=cd tabs_overlay && flutter test
