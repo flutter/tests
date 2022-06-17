@@ -1,0 +1,14 @@
+# Tests from https://github.com/flutter/packages
+
+# For animations package
+contact=goderbauer@google.com
+update=packages/animations
+
+# For rfw package
+contact=ian@hixie.ch
+update=packages/rfw
+
+fetch=git -c core.longPaths=true clone https://github.com/flutter/packages.git tests
+fetch=git -c core.longPaths=true -C tests checkout b6a3690da61b54591090e2388e6da07697f4ceda
+test.windows=.\customer_testing.bat
+test.posix=./customer_testing.sh
