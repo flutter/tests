@@ -1,0 +1,31 @@
+# Tests for the super_editor mono repo.
+
+# Contacts
+contact=flutterbountyhunters@gmail.com
+
+# Update
+update=./attributed_text/
+update=./super_text_layout/
+update=./super_editor/
+
+# Fetch the super_editor mono repo
+fetch=git clone https://github.com/superlistapp/super_editor.git tests
+fetch=git -C tests checkout 504093e82e44be4547958559ffc26aa48f08fa0c
+
+# Run the tests using a single script at the root of the mono repo.
+test=./run_flutter_test_repository_tests
+
+# To test your tests, check out the flutter/flutter repository and
+# then, from the root of that repository, run:
+#
+#   bin/flutter; cd dev/customer_testing; flutter pub get; time ../../bin/cache/dart-sdk/bin/dart run_tests.dart --repeat=100 <path>
+#
+# ...where <path> is the path to this file.
+#
+# This should run with no output, without failing, and should in total
+# take less than 15 minutes (a hundred runs of your tests taking just
+# a few seconds each). If your tests take longer, mention this in your
+# PR and we will evaluate them to see how valuable they are (e.g. how
+# unique and different they are compared to other tests we already
+# have). The more valuable the tests, the more likely we are to accept
+# them despite them taking a long time to run.
