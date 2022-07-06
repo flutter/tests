@@ -13,9 +13,14 @@ fetch=git clone https://github.com/superlistapp/super_editor.git tests
 fetch=git -C tests checkout a81e83c64683390a1d83a0979c88b5a09beab82e
 
 # Run the tests.
-test=flutter_test_repo_attributed_text_test
-test=flutter_test_repo_super_text_layout_test
-test=flutter_test_repo_super_editor_test
+test.posix=./flutter_test_repo_attributed_text_test
+test.windows=.\flutter_test_repo_attributed_text_test
+
+test.posix=./flutter_test_repo_super_text_layout_test
+test.windows=.\flutter_test_repo_super_text_layout_test
+
+test.posix=./flutter_test_repo_super_editor_test
+test.windows=.\flutter_test_repo_super_editor_test
 
 # To test your tests, check out the flutter/flutter repository and
 # then, from the root of that repository, run:
