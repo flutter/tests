@@ -4,23 +4,23 @@
 contact=flutterbountyhunters@gmail.com
 
 # Update
-update=./attributed_text/
-update=./super_text_layout/
-update=./super_editor/
+update=attributed_text/
+update=super_text_layout/
+update=super_editor/
 
 # Fetch the super_editor mono repo.
 fetch=git clone https://github.com/superlistapp/super_editor.git tests
 fetch=git -C tests checkout 004a6b93a56f18ec5320d340f61f8158febd59f8
 
 # Run the tests.
-test.posix=./flutter_test_repo_attributed_text_test.sh
-test.windows=.\flutter_test_repo_attributed_text_test.bat
+test.posix=flutter_test_repo_attributed_text_test.sh
+test.windows=flutter_test_repo_attributed_text_test.bat
 
-test.posix=./flutter_test_repo_super_text_layout_test.sh
-test.windows=.\flutter_test_repo_super_text_layout_test.bat
+test.posix=flutter_test_repo_super_text_layout_test.sh
+test.windows=flutter_test_repo_super_text_layout_test.bat
 
-test.posix=./flutter_test_repo_super_editor_test.sh
-test.windows=.\flutter_test_repo_super_editor_test.bat
+test.posix=flutter_test_repo_super_editor_test.sh
+test.windows=flutter_test_repo_super_editor_test.bat
 
 # To test your tests, check out the flutter/flutter repository and
 # then, from the root of that repository, run:
