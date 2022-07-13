@@ -1,7 +1,14 @@
 task:
-  name: tests-linux
+  name: tests-linux-0
   use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_PR == ''
-  script: scripts/verify_tests_on_master.sh
+  script: scripts/verify_tests_on_master.sh --shards 2 --shard-index 0
+  container:
+    image: gcc:latest
+
+task:
+  name: tests-linux-1
+  use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_PR == ''
+  script: scripts/verify_tests_on_master.sh --shards 2 --shard-index 1
   container:
     image: gcc:latest
 
@@ -30,9 +37,16 @@ task:
     os_version: 2019
 
 task:
-  name: tests-macos
+  name: tests-macos-0
   use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_PR == ''
-  script: scripts/verify_tests_on_master.sh
+  script: scripts/verify_tests_on_master.sh --shards 2 --shard-index 0
+  osx_instance:
+    image: mojave-base
+
+task:
+  name: tests-macos-1
+  use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_PR == ''
+  script: scripts/verify_tests_on_master.sh --shards 2 --shard-index 1
   osx_instance:
     image: mojave-base
 
