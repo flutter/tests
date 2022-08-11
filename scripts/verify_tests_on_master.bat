@@ -41,8 +41,10 @@ CD ..\..\..
 
 :: Now run the tests a bunch of times to try to find flakes (tests that sometimes pass
 :: even though they should be failing).
+:: Windows takes longer than the other systems to run tests. Default is lowered
+:: to 10 repeat runs to reduce strain on infra.
 @ECHO.
-CALL dart flutter\dev\customer_testing\run_tests.dart --repeat=15 --skip-template --shards %SHARDS% --shard-index %SHARD_INDEX% --verbose registry/*.test || GOTO :END
+CALL dart flutter\dev\customer_testing\run_tests.dart --repeat=10 --skip-template --shards %SHARDS% --shard-index %SHARD_INDEX% --verbose registry/*.test || GOTO :END
 @ECHO ON
 
 @ECHO.
