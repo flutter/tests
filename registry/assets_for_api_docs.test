@@ -4,4 +4,4 @@ contact=katelovett@google.com
 fetch=git -c core.longPaths=true clone https://github.com/flutter/assets-for-api-docs.git tests
 fetch=git -c core.longPaths=true -C tests checkout 109051af07cb2927f54512b58d6b25d4f515765b
 update=.
-test=./ci/check --no-activate analyze
+test=./ci/check analyze
