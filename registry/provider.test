@@ -1,6 +1,6 @@
 contact=darky12s@gmail.com
 fetch=git clone https://github.com/rrousselGit/provider.git tests
-fetch=git -C tests checkout 1b3374c282824f95b12b16ab22d6a718912b4a6b
+fetch=git -C tests checkout 46a27996b973bbd48cabec587b9a419cd4319add
 update=.
 test=flutter analyze --no-fatal-infos
-test=flutter test
+test=flutter test test/null_safe
