@@ -69,7 +69,12 @@ Tests must fulfill the following criteria to be added:
   upstream repository should use the `master` channel Flutter SDK.
 
 * Dependencies must be pinned. (Generally, checking in the
-  `pubspec.lock` file is sufficient for this purpose.)
+  `pubspec.lock` file is sufficient for this purpose.) However,
+  please avoid pinning packages such as `intl` that are also pinned
+  by the Flutter SDK, otherwise when Flutter updates the dependency
+  the tests will fail. Consider using `any` for the packages that are
+  pinned by the Flutter framework (that way they are automatically
+  updated when Flutter updates).
 
 
 ## Running the tests locally
