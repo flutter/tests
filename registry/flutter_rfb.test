@@ -1,0 +1,6 @@
+contact=goddchen@gmail.com
+fetch=git clone https://github.com/Goddchen/flutter-rfb.git tests
+fetch=git -C tests checkout b7aa339c5534b54a63674df64b26dfb86414b815
+update=.
+test=flutter analyze --no-fatal-infos
+test=flutter test
