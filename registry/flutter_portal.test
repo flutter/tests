@@ -1,7 +1,7 @@
 contact=creativecreatorormaybenot@gmail.com
 contact=ch271828n@gmail.com
 fetch=git clone https://github.com/fzyzcjy/flutter_portal.git tests
-fetch=git -C tests checkout 424d0167fffbd0cef4e5b263cbea21ae1e45fca2
+fetch=git -C tests checkout 64d0f1a26562dc5f491bc8ee0360ec622e00a0a5
 update=.
 test=flutter analyze --no-fatal-infos
 test=flutter test
