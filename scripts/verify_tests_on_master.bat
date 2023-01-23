@@ -29,7 +29,9 @@ git clone https://github.com/flutter/flutter.git || GOTO :END
 CALL flutter\bin\flutter doctor -v || GOTO :END
 @ECHO ON
 
-SET PATH=%PATH%;%CD%\flutter/bin;%CD%\flutter\bin\cache\dart-sdk\bin
+# Put Flutter at the start of the PATH because the OS image may contain
+# another version of Flutter.
+SET PATH=%CD%\flutter/bin;%CD%\flutter\bin\cache\dart-sdk\bin;%PATH%
 
 @ECHO.
 @ECHO.
