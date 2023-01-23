@@ -22,10 +22,13 @@ case $key in
 esac
 done
 
-# Switch to Flutter master.
-flutter channel master
-flutter upgrade
-flutter doctor -v
+# Fetch Flutter.
+git clone https://github.com/flutter/flutter.git
+flutter/bin/flutter doctor -v
+
+# Put Flutter at the start of the PATH because the OS image may contain
+# another version of Flutter.
+export PATH=`pwd`/flutter/bin:`pwd`/flutter/bin/cache/dart-sdk/bin:"$PATH"
 
 cd flutter/dev/customer_testing
 dart pub get
