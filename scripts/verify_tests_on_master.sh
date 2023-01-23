@@ -26,7 +26,9 @@ done
 git clone https://github.com/flutter/flutter.git
 flutter/bin/flutter doctor -v
 
-export PATH="$PATH":`pwd`/flutter/bin:`pwd`/flutter/bin/cache/dart-sdk/bin
+# Put Flutter at the start of the PATH because the OS image may contain
+# another version of Flutter.
+export PATH=`pwd`/flutter/bin:`pwd`/flutter/bin/cache/dart-sdk/bin:"$PATH"
 
 cd flutter/dev/customer_testing
 dart pub get
