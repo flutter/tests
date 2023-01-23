@@ -24,14 +24,11 @@ certutil -syncwithWU C:\Certs
 powershell.exe -c "Get-ChildItem -Path C:\certs -Filter '*.crt' | foreach-object {certutil -addstore -f root $_.fullname; $_.fullname}"
 rmdir c:\certs /s /q
 
-:: Fetch Flutter.
-git clone https://github.com/flutter/flutter.git || GOTO :END
-CALL flutter\bin\flutter doctor -v || GOTO :END
+:: Switch to Flutter master.
+flutter channel master || GOTO :END
+flutter upgrade || GOTO :END
+flutter doctor -v || GOTO :END
 @ECHO ON
-
-# Put Flutter at the start of the PATH because the OS image may contain
-# another version of Flutter.
-SET PATH=%CD%\flutter/bin;%CD%\flutter\bin\cache\dart-sdk\bin;%PATH%
 
 @ECHO.
 @ECHO.
