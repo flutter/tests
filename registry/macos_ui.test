@@ -1,0 +1,9 @@
+contact=groovinchip@gmail.com
+
+fetch=git clone https://github.com/GroovinChip/macos_ui.git tests
+fetch=git -C tests checkout ae5dc52a3b0da21eccffff23088376afa7bd59d2
+
+update=.
+
+test=flutter analyze --no-fatal-infos
+test=flutter test
