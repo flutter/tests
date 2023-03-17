@@ -6,9 +6,10 @@
 
 contact=danny@tuppeny.com
 fetch=git clone https://github.com/DanTup/tiler.git tests
-fetch=git -C tests checkout 3cb0cad96cc393b85cf7e38c4623cc16390f906e
+fetch=git -C tests checkout 0f80585f1f7d9a01a463c316e44c59b3cc86f9f0
 fetch=git -C tests submodule init
 fetch=git -C tests submodule update --recursive
 update=.
 test=flutter analyze --no-fatal-infos
-test=flutter test test
+test.windows=flutter test test
+test.posix=env USE_FLUTTER_TEST_FONT=1 flutter test test
