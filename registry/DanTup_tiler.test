@@ -12,5 +12,6 @@ fetch=git -C tests submodule update --recursive
 update=.
 test=flutter analyze --no-fatal-infos
 test.windows=set USE_FLUTTER_TEST_FONT=1
+test.windows=set
 test.windows=flutter test test
 test.posix=env USE_FLUTTER_TEST_FONT=1 flutter test test
