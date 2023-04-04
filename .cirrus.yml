@@ -1,21 +1,28 @@
 task:
   name: tests-linux-0
   use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_PR == ''
-  script: scripts/verify_tests_on_master.sh --shards 2 --shard-index 0
+  script: scripts/verify_tests_on_master.sh --shards 3 --shard-index 0
   container:
     image: gcc:latest
 
 task:
   name: tests-linux-1
   use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_PR == ''
-  script: scripts/verify_tests_on_master.sh --shards 2 --shard-index 1
+  script: scripts/verify_tests_on_master.sh --shards 3 --shard-index 1
+  container:
+    image: gcc:latest
+
+task:
+  name: tests-linux-2
+  use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_PR == ''
+  script: scripts/verify_tests_on_master.sh --shards 3 --shard-index 2
   container:
     image: gcc:latest
 
 task:
   name: tests-windows-0
   use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_PR == ''
-  script: scripts\verify_tests_on_master.bat --shards 3 --shard-index 0
+  script: scripts\verify_tests_on_master.bat --shards 5 --shard-index 0
   windows_container:
     image: cirrusci/windowsservercore:2019
     os_version: 2019
@@ -23,7 +30,7 @@ task:
 task:
   name: tests-windows-1
   use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_PR == ''
-  script: scripts\verify_tests_on_master.bat --shards 3 --shard-index 1
+  script: scripts\verify_tests_on_master.bat --shards 5 --shard-index 1
   windows_container:
     image: cirrusci/windowsservercore:2019
     os_version: 2019
@@ -31,7 +38,23 @@ task:
 task:
   name: tests-windows-2
   use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_PR == ''
-  script: scripts\verify_tests_on_master.bat --shards 3 --shard-index 2
+  script: scripts\verify_tests_on_master.bat --shards 5 --shard-index 2
+  windows_container:
+    image: cirrusci/windowsservercore:2019
+    os_version: 2019
+
+task:
+  name: tests-windows-3
+  use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_PR == ''
+  script: scripts\verify_tests_on_master.bat --shards 5 --shard-index 3
+  windows_container:
+    image: cirrusci/windowsservercore:2019
+    os_version: 2019
+
+task:
+  name: tests-windows-4
+  use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_PR == ''
+  script: scripts\verify_tests_on_master.bat --shards 5 --shard-index 4
   windows_container:
     image: cirrusci/windowsservercore:2019
     os_version: 2019
@@ -41,14 +64,14 @@ task:
   use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_PR == ''
   script: scripts/verify_tests_on_master.sh --shards 2 --shard-index 0
   osx_instance:
-    image: mojave-base
+    image: ghcr.io/cirruslabs/macos-ventura-xcode:14.2
 
 task:
   name: tests-macos-1
   use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true' && $CIRRUS_PR == ''
   script: scripts/verify_tests_on_master.sh --shards 2 --shard-index 1
   osx_instance:
-    image: mojave-base
+    image: ghcr.io/cirruslabs/macos-ventura-xcode:14.2
 
 task:
   name: skp_generator
