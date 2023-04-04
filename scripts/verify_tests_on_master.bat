@@ -29,7 +29,9 @@ git clone https://github.com/flutter/flutter.git || GOTO :END
 CALL flutter\bin\flutter doctor -v || GOTO :END
 @ECHO ON
 
-SET PATH=%PATH%;%CD%\flutter/bin;%CD%\flutter\bin\cache\dart-sdk\bin
+# Put Flutter at the start of the PATH because the OS image may contain
+# another version of Flutter.
+SET PATH=%CD%\flutter/bin;%CD%\flutter\bin\cache\dart-sdk\bin;%PATH%
 
 @ECHO.
 @ECHO.
@@ -44,6 +46,7 @@ CD ..\..\..
 :: Windows takes longer than the other systems to run tests. Default is lowered
 :: to 10 repeat runs to reduce strain on infra.
 @ECHO.
+set USE_FLUTTER_TEST_FONT=1
 CALL dart flutter\dev\customer_testing\run_tests.dart --repeat=10 --skip-template --shards %SHARDS% --shard-index %SHARD_INDEX% --verbose registry/*.test || GOTO :END
 @ECHO ON
 

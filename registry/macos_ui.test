@@ -1,0 +1,10 @@
+contact=groovinchip@gmail.com
+
+fetch=git clone https://github.com/GroovinChip/macos_ui.git tests
+fetch=git -C tests checkout 411d00d56f17f68beaefb0fc0e8c817b343c4a03
+
+update=.
+
+test=flutter analyze --no-fatal-infos
+# TODO(goderbauer): Enable again when https://github.com/flutter/flutter/issues/123669 is fixed upstream.
+# test=flutter test
