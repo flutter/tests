@@ -1,0 +1,65 @@
+LÉAME.md
+Registro de pruebas de clientes de Flutter
+Cuadro de mando de OpenSSF
+
+Este repositorio contiene referencias a pruebas (en el registry directorio) que se ejecutan con cada confirmación en Flutter para verificar que no se hayan introducido cambios importantes (en los fragmentos "customer_testing"). Las pruebas a las que hace referencia este repositorio normalmente las mantienen personas ajenas al equipo de Flutter, como parte del desarrollo de sus aplicaciones. Están destinados a brindar al equipo de Flutter visibilidad sobre cómo sus cambios afectan a los desarrolladores del mundo real que usan Flutter.
+
+Agregar más pruebas
+Le invitamos a agregar un nuevo lote de pruebas. Para hacerlo, copie el archivo registry/template.testpara crear un nuevo archivo en el registry/ directorio. Rellene los campos y elimine todos los comentarios. Luego, envíe un PR con este nuevo archivo.
+
+Las pruebas deben cumplir los siguientes criterios para ser añadidas:
+
+Todo el código debe estar disponible públicamente en GitHub bajo una licencia compatible con este esfuerzo.
+
+Las pruebas deben ser herméticas. Por ejemplo, una prueba no debe implicar actividad de red, generar procesos ni acceder al sistema de archivos local, excepto para acceder a los archivos que se empaquetan con la prueba.
+
+Las pruebas deben ser resistentes para ejecutarse simultáneamente con otras pruebas, incluidas las ejecuciones simultáneas de sí mismas.
+
+Las pruebas deben ser confiables. Una prueba no debe pretender pasar si está fallando. Ejecutar una prueba varias veces seguidas siempre debe tener el mismo resultado.
+
+Las pruebas no deben tener salida cuando están pasando.
+
+Las pruebas deben ser lo más rápidas posible dado el hardware. Por ejemplo, las pruebas no deben usar cronómetros reales ni depender del reloj de pared.
+
+El tiempo que toman las pruebas debe ser proporcional a su valor. Se espera que se ejecuten unos pocos miles de pruebas en unos pocos minutos. Se aplicará un límite superior de unos cinco minutos a cada conjunto de pruebas aportado (sin incluir el tiempo para descargar las pruebas), pero se espera que la mayoría de los conjuntos se completen en segundos.
+
+Las pruebas deben ser compatibles con cualquier herramienta para actualizar automáticamente el código de Flutter (por ejemplo, no pueden depender de la generación de código personalizado a menos que dicha generación de código pueda conectarse al mecanismo de actualización automática).
+
+Las pruebas deben representar buenas prácticas como se describe en la documentación de Flutter. Por ejemplo, usar un objeto después de llamar a su disposemétodo viola el contrato descrito por ese método. Acceder a los campos de una Statesubclase privada desde otro paquete convirtiéndolo en dinámico es igualmente incompleto y no sería un comportamiento compatible.
+
+Las pruebas deben pasar incluso si hay problemas de nivel de "información" de análisis en el código. En general, esto significa que si la prueba realiza un análisis estático, lo hace ignorando los elementos de nivel de información (es decir, flutter analyze --no-fatal-infos).
+
+Las pruebas deben superarse en el momento en que se aportan.
+
+El repositorio ascendente que aloja las pruebas debe poder recibir parches para admitir el mastercanal de Flutter. Esto significa que CI en el repositorio ascendente debe usar el mastercanal Flutter SDK.
+
+Las dependencias deben estar ancladas. (Por lo general, registrar el pubspec.lockarchivo es suficiente para este propósito). Sin embargo, evite fijar paquetes como intllos que también están fijados por el SDK de Flutter, de lo contrario, cuando Flutter actualice la dependencia, las pruebas fallarán. Considere usar anypara los paquetes que están fijados por el marco Flutter (de esa manera, se actualizan automáticamente cuando se actualiza Flutter).
+
+Ejecutando las pruebas localmente
+Para ejecutar estas pruebas localmente, consulte este directorio en un directorio paralelo al de su flutterrepositorio, luego, desde este directorio, ejecute:
+
+pushd ../flutter/dev/customer_testing && pub get && popd
+../flutter/bin/cache/dart-sdk/bin/dart ../flutter/dev/customer_testing/run_tests.dart --skip-template --verbose registry/*.test
+El primer comando recupera los paquetes de Dart utilizados customer_testing y puede omitirse para ejecuciones posteriores.
+
+Si se rompe una prueba
+El objetivo de estas pruebas es asegurarnos de que no rompamos el código existente y, al mismo tiempo, podamos realizar mejoras en las API de Flutter.
+
+Si encuentra que un PR que ha creado en flutter/flutter hace que una de estas pruebas falle, tiene las siguientes opciones:
+
+Cambia tu PR para que la prueba ya no falle. Esta es la opción preferida, siempre que el resultado sea uno del que podamos estar orgullosos. ¿Es la API resultante algo que se le ocurriría sin la restricción de compatibilidad con versiones anteriores? Eso es bueno. ¿La API resultante es algo que, tan pronto como la ves, piensas "¿por qué?" o "eso es raro"? Eso es malo. Considere los consejos en la guía de estilo: https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo
+
+Realice el proceso de cambios importantes, como se documenta aquí: https://github.com/flutter/flutter/wiki/Tree-hygiene#handling-breaking-changes Si va a hacer esto, deberá comunicarse con el personas responsables de las pruebas de ruptura (consulte los archivos .test relevantes), ayúdelos a corregir su código y actualice este repositorio para usar la nueva versión de sus pruebas, además de los pasos descritos en la wiki. También tendrá que aterrizar su cambio en dos partes, para que las personas tengan tiempo de migrar (un cambio "suave").
+
+Retire la prueba en cuestión. Esta es, con mucho, la solución menos ideal. Para seguir este camino, primero debemos establecer que uno de los siguientes es cierto:
+
+las personas enumeradas como contactos para la prueba no responden (dentro de las 72 horas).
+
+la prueba está mal escrita (p. ej., contiene una condición de carrera o se basa en suposiciones que violan contratos de API claramente documentados) y las personas enumeradas como contactos no están dispuestas a corregir la prueba o aceptar correcciones para la prueba.
+
+hemos pasado por el proceso de cambio radical mencionado anteriormente, pero no podemos actualizar la prueba en consecuencia (por ejemplo, las personas que figuran como contactos no están dispuestas a trabajar con nosotros para actualizar su código).
+
+Generadores SKP
+Elskp_generator directorio contiene un programa Flutter (y scripts de shell asociados) para generar SKP de prueba para el equipo de Skia.
+
+Las contribuciones en forma de widgets sin estado que muestren escenas de su aplicación son bienvenidas. Consulte el archivo README.md en ese directorio.
