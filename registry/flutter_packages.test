@@ -9,7 +9,7 @@ contact=ian@hixie.ch
 update=packages/rfw
 
 fetch=git -c core.longPaths=true clone https://github.com/flutter/packages.git tests
-fetch=git -c core.longPaths=true -C tests checkout 784291b4fdf4c95c5c5e57fc465cbd16fece35ba
+fetch=git -c core.longPaths=true -C tests checkout 0ae057994cd225d6136587059e8763eab5468212
 test.windows=set USE_FLUTTER_TEST_FONT=1
 test.windows=.\customer_testing.bat
 test.posix=env USE_FLUTTER_TEST_FONT=1 ./customer_testing.sh
