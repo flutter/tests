@@ -1,0 +1,12 @@
+# Tests from https://github.com/flutter/devtools
+
+contact=kenzieschmoll@google.com
+
+fetch=git clone https://github.com/flutter/devtools.git tests
+fetch=git -C tests checkout 8916dbba8b0d9d73f2c51d755b198dbe707bcf09
+
+update=packages/devtools_app
+update=packages/devtools_shared
+update=packages/devtools_test
+
+test.posix=tool/bots.sh
