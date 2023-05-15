@@ -3,10 +3,10 @@
 contact=kenzieschmoll@google.com
 
 fetch=git clone https://github.com/flutter/devtools.git tests
-fetch=git -C tests checkout 8916dbba8b0d9d73f2c51d755b198dbe707bcf09
+fetch=git -C tests checkout 6f63e8990606baa6ad6a7dd34762fceb2f8f849c
 
 update=packages/devtools_app
 update=packages/devtools_shared
 update=packages/devtools_test
 
-test.posix=tool/bots.sh
+test.linux=tool/flutter_tests.sh
