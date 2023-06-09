@@ -2,8 +2,8 @@
 
 contact=dart-devtools-eng@google.com
 
-fetch=git clone https://github.com/flutter/devtools.git tests
-fetch=git -C tests checkout 6f63e8990606baa6ad6a7dd34762fceb2f8f849c
+fetch=git clone -b test-registry https://github.com/kenzieschmoll/devtools.git tests
+fetch=git -C tests checkout 1d6eab81f2b47de397eced3221db7f643b48a5f5
 
 update=packages/devtools_app
 update=packages/devtools_shared
