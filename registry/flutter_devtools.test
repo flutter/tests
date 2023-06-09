@@ -1,0 +1,12 @@
+# Tests from https://github.com/flutter/devtools
+
+contact=dart-devtools-eng@google.com
+
+fetch=git clone https://github.com/flutter/devtools.git tests
+fetch=git -C tests checkout 6f63e8990606baa6ad6a7dd34762fceb2f8f849c
+
+update=packages/devtools_app
+update=packages/devtools_shared
+update=packages/devtools_test
+
+test.linux=tool/flutter_tests.sh
