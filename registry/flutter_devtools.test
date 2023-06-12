@@ -3,7 +3,7 @@
 contact=dart-devtools-eng@google.com
 
 fetch=git clone https://github.com/kenzieschmoll/devtools.git tests
-fetch=git -C tests checkout 2ea31fc3db95785c02a492dd7bd96c963038a289
+fetch=git -C tests checkout f76dc6c917e5d534bdeb4842d0212b483ecb77ad
 
 update=packages/devtools_app
 update=packages/devtools_shared
