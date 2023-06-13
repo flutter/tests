@@ -1,6 +1,6 @@
 contact=flutter-infra@google.com
 fetch=git clone https://github.com/flutter/cocoon.git tests
-fetch=git -C tests checkout 7b82d28f55e18fc0da7ccfb452d34e8c5f2d7e44
+fetch=git -C tests checkout 69368ea5d449027269e21be4eb4290fb75930f0f
 update=dashboard
 # Runs flutter analyze, flutter test, and builds web platform
 test.posix=./test_utilities/bin/flutter_test_runner.sh dashboard
