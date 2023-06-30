@@ -2,7 +2,7 @@ contact=raman.fedaseyeu@signify.com
 contact=remonhelmond@gmail.com
 
 fetch=git -c core.longPaths=true clone https://github.com/PhilipsHue/flutter_reactive_ble.git tests
-fetch=git -c core.longPaths=true -C tests checkout 9aa9957e0d05c05362dc5553bc75c1f206417c1c
+fetch=git -c core.longPaths=true -C tests checkout 1432adfac3ab1ad3061c33aa59921814a9d41138
 
 update=packages/flutter_reactive_ble/
 update=packages/reactive_ble_mobile/
