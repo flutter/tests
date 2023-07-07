@@ -133,6 +133,25 @@ these tests to fail, you have the following options:
       listed as contacts are not willing to work with us to update
       their code).
 
+## Private tests
+
+If you have a significant body of tests that you would like to contribute,
+but are unable to do so using this registry either because they are proprietary,
+or because the volume of tests is too great for our CI, please consider reaching
+out on our [Discord server](https://github.com/flutter/flutter/wiki/Chat).
+
+We are willing to add such tests to our CI, under the following conditions:
+
+- you must commit to being very responsive, promptly responding to relevant
+  discussions on our Discord during working hours in your time zone.
+- you must take responsibility for helping contributors land patches which
+  your tests flag as problematic, including providing debugging help.
+- you must fund and maintain any tooling necessary for the integration of
+  your tests into our system.
+- you agree that the integration will be disabled if it has a non-trivial rate
+  of false-positives, suffers regular infrastructure failures, or is otherwise
+  disruptive to the project.
+
 
 # SKP Generators
 
