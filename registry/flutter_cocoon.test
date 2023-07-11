@@ -4,3 +4,7 @@ fetch=git -C tests checkout a985c57b19c123850cdc1163174486bbf8b6f4fa
 update=dashboard
 # Runs flutter analyze, flutter test, and builds web platform
 test.posix=./test_utilities/bin/flutter_test_runner.sh dashboard
+
+# Reduce number of iterations because these tests take longer than our recommended maximum
+# but we want to make sure we don't break cocoon since it's our core infrastructure!
+iterations=3
