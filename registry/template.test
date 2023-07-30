@@ -128,6 +128,13 @@ update=.
 # "--no-fatal-infos" argument so that we can continue to change lints
 # without having to e.g. reformat all your code any time we fix a
 # minor bug in some esoteric stylistic lint. :-)
+#
+# If your tests need a setup step first, include it as a test step.
+# Making such a setup step idempotent (and fast) will help keep the
+# total time reasonable (see below). Avoid setup steps that require
+# downloading extra resources from sites other than pub and GitHub,
+# as that will increase the flakiness potential of your tests (and
+# we will remove flaky tests).
 test=flutter analyze --no-fatal-infos
 test=flutter test
 test=more_tests
