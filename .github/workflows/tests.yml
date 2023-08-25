@@ -9,7 +9,7 @@ on:
 permissions: read-all
 
 jobs:
-  test_win:
+  test_linux:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: true
@@ -28,3 +28,28 @@ jobs:
       - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
       - name: ${{ matrix.name }}
         run: scripts/verify_tests_on_master.sh --shards ${{ matrix.shards }} --shard-index ${{ matrix.shard-index }}
+  test_windows:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - name: tests-windows-0
+            shards: 5
+            shard-index: 0
+          - name: tests-windows-1
+            shards: 5
+            shard-index: 1
+          - name: tests-windows-2
+            shards: 5
+            shard-index: 2
+          - name: tests-windows-3
+            shards: 5
+            shard-index: 3
+          - name: tests-windows-4
+            shards: 5
+            shard-index: 4
+    steps:
+      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+      - name: ${{ matrix.name }}
+        run: scripts\verify_tests_on_master.bat --shards ${{ matrix.shards }} --shard-index ${{ matrix.shard-index }}
