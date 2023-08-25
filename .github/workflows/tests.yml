@@ -1,0 +1,72 @@
+# This file contains configurations to run customer_tests using
+# github actions. To learn more about github actions and how to
+# update this file please refer to https://docs.github.com/en/actions.
+name: Tests
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+# Declare default permissions as read only.
+permissions: read-all
+
+jobs:
+  linux_tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - name: shard 1 of 3
+            shard-index: 0
+          - name: shard 2 of 3
+            shard-index: 1
+          - name: shard 3 of 32
+            shard-index: 2
+    steps:
+      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+      - name: ${{ matrix.name }}
+        run: scripts/verify_tests_on_master.sh --shards 3 --shard-index ${{ matrix.shard-index }}
+  skp_generator_tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+    steps:
+      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+      - name: skp_generator 
+        run: (cd skp_generator && ./build.sh)
+  windows_tests:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - name: shard 1 of 5
+            shard-index: 0 
+          - name: shard 2 of 5
+            shard-index: 1
+          - name: shard 3 of 5
+            shard-index: 2
+          - name: shardd 4 of 5
+            shard-index: 3
+          - name: shard 5 of 5
+            shard-index: 4
+    steps:
+      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+      - name: ${{ matrix.name }}
+        run: scripts\verify_tests_on_master.bat --shards 5 --shard-index ${{ matrix.shard-index }}
+  macos_tests:
+    runs-on: macos-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - name: shard 1 of 2
+            shard-index: 0
+          - name: shard 2 of 2 
+            shard-index: 1
+    steps:
+      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+      - name: ${{ matrix.name }}
+        run: scripts/verify_tests_on_master.sh --shards 2 --shard-index ${{ matrix.shard-index }}
