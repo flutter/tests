@@ -24,7 +24,7 @@ jobs:
           - name: tests-linux-2
             shards: 3
             shard-index: 2
-      steps:
-        - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
-        - name: ${{ matrix.name }}
-          run: scripts/verify_tests_on_master.sh --shards ${{ matrix.shards }} --shard-index ${{ matrix.shard-index }}
+    steps:
+      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+      - name: ${{ matrix.name }}
+        run: scripts/verify_tests_on_master.sh --shards ${{ matrix.shards }} --shard-index ${{ matrix.shard-index }}
