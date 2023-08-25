@@ -1,0 +1,30 @@
+name: Tests
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+# Declare default permissions as read only.
+permissions: read-all
+
+jobs:
+  test_win:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - name: tests-linux-0
+            shards: 3
+            shard-index: 0
+          - name: tests-linux-1
+            shards: 3
+            shard-index: 1
+          - name: tests-linux-2
+            shards: 3
+            shard-index: 2
+      steps:
+        - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+        - name: ${{ matrix.name }}
+          run: scripts/verify_tests_on_master.sh --shards ${{ matrix.shards }} --shard-index ${{ matrix.shard-index }}
