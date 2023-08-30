@@ -15,7 +15,7 @@ update=super_editor/
 
 # Fetch the super_editor mono repo.
 fetch=git clone https://github.com/superlistapp/super_editor.git tests
-fetch=git -C tests checkout 7bfb3abfc1cea0e9abe83b6b6578f3cde98c11d1
+fetch=git -C tests checkout 34165a02c77e23970a468467259a9190b3d4e460
 
 # Run the tests.
 test.posix=./flutter_test_registry/flutter_test_repo_test.sh
