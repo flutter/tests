@@ -21,7 +21,7 @@ jobs:
             shard-index: 0
           - name: shard 2 of 3
             shard-index: 1
-          - name: shard 3 of 32
+          - name: shard 3 of 3
             shard-index: 2
     steps:
       - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
