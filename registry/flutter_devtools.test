@@ -11,8 +11,9 @@ update=packages/devtools_extensions
 update=packages/devtools_shared
 update=packages/devtools_test
 
-test=./tool/generate_code.sh >> output.txt
-# test.linux=tool/flutter_tests.sh
+test.linux=dart ./tool/bin/devtools_tool.dart analyze
+test.linux=./tool/generate_code.sh >> output.txt
+#test.linux=./tool/flutter_tests.sh
 
 # Reduce number of iterations because these tests take longer than our recommended maximum.
 iterations=1
