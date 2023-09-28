@@ -3,7 +3,9 @@
 contact=dart-devtools-eng@google.com
 
 fetch=git clone https://github.com/kenzieschmoll/devtools.git tests
-fetch=git -C tests checkout 592830fcc9a325d604e44026e18acbb7e81726d1
+fetch=git -C tests checkout 0729b72c95993e88e57c991d250c0858ee329e78
+
+test.linux=./tool/refresh.sh >> output.txt
 
 update=packages/devtools_app
 update=packages/devtools_app_shared
@@ -11,7 +13,6 @@ update=packages/devtools_extensions
 update=packages/devtools_shared
 update=packages/devtools_test
 
-test.linux=./tool/generate_code.sh >> output.txt
 test.linux=./tool/flutter_customer_tests/analyze.sh
 #test.linux=./tool/flutter_customer_tests/flutter_customer_tests.sh
 
