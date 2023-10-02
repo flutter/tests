@@ -84,7 +84,7 @@ parallel to your `flutter` repository checkout, then, from this
 directory, run:
 
 ```
-pushd ../flutter/dev/customer_testing && pub get && popd
+pushd ../flutter/dev/customer_testing && flutter pub get && popd
 ../flutter/bin/cache/dart-sdk/bin/dart ../flutter/dev/customer_testing/run_tests.dart --skip-template --verbose registry/*.test
 ```
 
