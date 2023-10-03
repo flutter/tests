@@ -17,4 +17,4 @@ test.linux=./tool/flutter_customer_tests/analyze.sh
 test.linux=./tool/flutter_customer_tests/flutter_customer_tests.sh
 
 # Reduce number of iterations because these tests take longer than our recommended maximum.
-iterations=1
+iterations=2
