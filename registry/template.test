@@ -77,7 +77,7 @@ fetch=git -C tests checkout 0123456789abcdef0123456789abcdef01234567
 # On Windows, these commands are executed via
 # `CMD.EXE /S /C "command..."`.
 #
-# Alternatively, you can use a platform-specific test line:
+# Alternatively, you can use a platform-specific setup line:
 #   setup.windows= to run a command on Windows only.
 #   setup.macos= to run a command on MacOS only.
 #   setup.linux= to run a command on Linux only.
