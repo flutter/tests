@@ -3,7 +3,7 @@
 contact=dart-devtools-eng@google.com
 
 fetch=git clone https://github.com/kenzieschmoll/devtools.git tests
-fetch=git -C tests checkout 0729b72c95993e88e57c991d250c0858ee329e78
+fetch=git -C tests checkout 74b9a1375136fed1738b52cecfd41b9521225a4d
 
 setup.linux=./tool/refresh.sh >> output.txt
 
