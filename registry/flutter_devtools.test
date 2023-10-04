@@ -16,5 +16,5 @@ update=packages/devtools_test
 test.linux=./tool/flutter_customer_tests/analyze.sh
 test.linux=./tool/flutter_customer_tests/flutter_customer_tests.sh
 
-# Reduce number of iterations because these tests take longer than our recommended maximum.
-iterations=2
+# Reduce number of iterations to 1 because these tests take longer than our recommended maximum.
+iterations=1
