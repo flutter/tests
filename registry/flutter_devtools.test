@@ -3,7 +3,7 @@
 contact=dart-devtools-eng@google.com
 
 fetch=git clone https://github.com/kenzieschmoll/devtools.git tests
-fetch=git -C tests checkout 74b9a1375136fed1738b52cecfd41b9521225a4d
+fetch=git -C tests checkout d5cc6c661fe31259ead6d94cdd1982203a2e3d56
 
 setup.linux=./tool/refresh.sh >> output.txt
 
@@ -14,7 +14,8 @@ update=packages/devtools_shared
 update=packages/devtools_test
 
 test.linux=./tool/flutter_customer_tests/analyze.sh
-test.linux=./tool/flutter_customer_tests/flutter_customer_tests.sh
+# test.linux=./tool/flutter_customer_tests/flutter_customer_tests.sh
+test.linux=./tool/flutter_customer_tests/flutter_customer_integration_tests.sh
 
 # Reduce number of iterations to 1 because these tests take longer than our recommended maximum.
 iterations=1
