@@ -17,7 +17,7 @@ test.linux=./tool/flutter_customer_tests/analyze.sh
 
 # TODO(kenz): if we can exclude golden image tests (or switch to Mock Canvas?)
 # run these tests on all platforms.
-test.linux=./tool/flutter_customer_tests/tests.sh
+test.linux=./tool/flutter_customer_tests/test.sh
 
 # Reduce number of iterations to 1 because these tests take longer than our recommended maximum.
 iterations=1
