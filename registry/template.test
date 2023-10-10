@@ -63,6 +63,28 @@ contact=bar@example.com
 fetch=git clone https://github.com/USERNAME/REPOSITORY.git tests
 fetch=git -C tests checkout 0123456789abcdef0123456789abcdef01234567
 
+# The "setup" lines specify commands to run before the "update" or
+# "test" lines are handled. This is useful for things like generating
+# mocks before running the "update" and "test" steps.
+#
+# Commands specified using "setup=" must work identically on Windows,
+# macOS, and Linux. This generally means you want to limit yourself to
+# simple commands. For anything more elaborate, consider creating a
+# "setup.sh" shell script to run on macOS and Linux and a "setup.bat"
+# batch file to run on Windows (referencing it without the extension
+# here should mean that in runs the shell script on Unix systems and
+# the batch file on Windows, because of how Windows looks up commands).
+# On Windows, these commands are executed via
+# `CMD.EXE /S /C "command..."`.
+#
+# Alternatively, you can use a platform-specific setup line:
+#   setup.windows= to run a command on Windows only.
+#   setup.macos= to run a command on MacOS only.
+#   setup.linux= to run a command on Linux only.
+#   setup.posix= to run a command on MacOS and Linux only.
+setup.posix=setup.sh
+setup.windows=setup.bat
+
 # The "update" lines specify paths (relative to the newly created
 # "tests" directory) in which to run a flutter command to
 # automatically update the code to fix breaking changes. The command

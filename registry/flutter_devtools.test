@@ -1,0 +1,23 @@
+# Tests from https://github.com/flutter/devtools
+
+contact=dart-devtools-eng@google.com
+
+fetch=git clone https://github.com/flutter/devtools.git tests
+fetch=git -C tests checkout 26d2093276fcab94c8cc24b50548d1ea66c72d93
+
+setup.linux=./tool/refresh.sh >> output.txt
+
+update=packages/devtools_app
+update=packages/devtools_app_shared
+update=packages/devtools_extensions
+update=packages/devtools_shared
+update=packages/devtools_test
+
+test.linux=./tool/flutter_customer_tests/analyze.sh
+
+# TODO(kenz): if we can exclude golden image tests (or switch to Mock Canvas?)
+# run these tests on all platforms.
+test.linux=./tool/flutter_customer_tests/test.sh
+
+# Reduce number of iterations to 1 because these tests take longer than our recommended maximum.
+iterations=1
