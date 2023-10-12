@@ -1,7 +1,7 @@
 contact=groovinchip@gmail.com
 
 fetch=git clone https://github.com/GroovinChip/macos_ui.git tests
-fetch=git -C tests checkout bfa581c8dd0d0c904851245d5c2bc4b78264b4ed
+fetch=git -C tests checkout c6d37d88e38bddc0723fee9eb57c146aa9f0053d
 
 update=.
 
