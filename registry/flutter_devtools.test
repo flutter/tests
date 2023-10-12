@@ -3,7 +3,7 @@
 contact=dart-devtools-eng@google.com
 
 fetch=git clone https://github.com/flutter/devtools.git tests
-fetch=git -C tests checkout 26d2093276fcab94c8cc24b50548d1ea66c72d93
+fetch=git -C tests checkout b3a2620716c7597bed07c209833e69160fc97761
 
 setup.linux=./tool/refresh.sh >> output.txt
 
