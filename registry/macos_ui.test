@@ -3,12 +3,12 @@ contact=groovinchip@gmail.com
 fetch=git clone https://github.com/GroovinChip/macos_ui.git tests
 fetch=git -C tests checkout c6d37d88e38bddc0723fee9eb57c146aa9f0053d
 
+update=.
+
 # Disable macos_ui tests due to them not being hermetic.
 # - Github issue: https://github.com/macosui/macos_ui/issues/499
 
 test=echo macos_ui tests are disabled
-
-#update=.
 
 #test=flutter analyze --no-fatal-infos
 #test=flutter test
