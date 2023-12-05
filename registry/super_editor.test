@@ -15,15 +15,8 @@ update=super_editor/
 
 # Fetch the super_editor mono repo.
 fetch=git clone https://github.com/superlistapp/super_editor.git tests
-fetch=git -C tests checkout 865a559bf27ef39c8c8554f9343cd89abf8621dd
+fetch=git -C tests checkout d9daa4a19f9b7553c33923f099632c5d359d7e8d
 
 # Run the tests.
-
-# Temporarily disable tests while
-#   https://github.com/flutter/flutter/pull/136854 and
-#   https://github.com/superlistapp/super_editor/pull/1593 land.
-
-#test.posix=./flutter_test_registry/flutter_test_repo_test.sh
-#test.windows=.\flutter_test_registry\flutter_test_repo_test.bat
-
-test=echo Temporarily disabled
+test.posix=./flutter_test_registry/flutter_test_repo_test.sh
+test.windows=.\flutter_test_registry\flutter_test_repo_test.bat
