@@ -1,6 +1,11 @@
 contact=flutter-framework@google.com
 fetch=git clone https://github.com/flutter/assets-for-api-docs.git tests
 fetch=git -C tests checkout 008a2dd42478822fa35a56f7427bd3db14175a34
-update=.
+update=packages/animation_metadata
+update=packages/diagram_capture
+update=packages/diagram_generator
+update=packages/diagram_viewer
+update=packages/diagram
+update=packages/snippets
 test=flutter analyze --no-fatal-infos
 test=./ci/tool_runner test
