@@ -3,7 +3,7 @@
 contact=dart-devtools-eng@google.com
 
 fetch=git clone https://github.com/flutter/devtools.git tests
-fetch=git -C tests checkout d1990e77f911c72b4bcaabbd901d164df211b133
+fetch=git -C tests checkout 412f4ad1449fe551363774be82ace74174837cd1
 
 setup.linux=./tool/flutter_customer_tests/setup.sh >> output.txt
 
