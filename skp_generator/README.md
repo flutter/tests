@@ -13,7 +13,7 @@ Run "build.sh" to generate the SKPs. They will all be placed in the
 `skps/` directory if everything is successful.
 
 WARNING!!! THIS SCRIPT DELETES EVERYTHING NEW IN THIS DIRECTORY.
-Only files commited to Git before running the script will survive!
+Only files committed to Git before running the script will survive!
 
 
 ## Contributing new scenes
@@ -62,5 +62,5 @@ development.
 ## Troubleshooting
 
 If things don't work, make sure your Flutter version is up to date.
-This is intended to work against the latest `master` branch of the
-flutter/flutter repo.
+This is intended to work against the latest `main` branch of the
+`flutter/flutter` repo.

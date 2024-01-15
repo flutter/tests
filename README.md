@@ -65,8 +65,8 @@ Tests must fulfill the following criteria to be added:
 * The tests must pass at the time they are contributed.
 
 * The upstream repository that hosts the tests must be able to receive patches
-  to support the `master` channel of Flutter. This means that CI on the
-  upstream repository should use the `master` channel Flutter SDK.
+  to support the `main` channel of Flutter. This means that CI on the
+  upstream repository should use the `main` channel Flutter SDK.
 
 * Dependencies must be pinned. (Generally, checking in the
   `pubspec.lock` file is sufficient for this purpose.) However,

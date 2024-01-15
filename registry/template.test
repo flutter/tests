@@ -37,7 +37,7 @@ contact=bar@example.com
 # if your tests are especially valuable.
 #
 # The checkout must always check out the exact same set of tests. Do
-# not check out the current master branch or some such; always fetch a
+# not check out the current main branch or some such; always fetch a
 # specific revision. You may regularly submit PRs that update the
 # revision being used.
 #
