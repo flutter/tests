@@ -24,13 +24,13 @@ jobs:
           - name: shard 3 of 3
             shard-index: 2
     steps:
-      - uses: actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b
+      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
       - name: ${{ matrix.name }}
         run: scripts/verify_tests_on_main.sh --shards 3 --shard-index ${{ matrix.shard-index }}
   skp_generator_tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b
+      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
       - name: skp_generator 
         run: (cd skp_generator && ./build.sh)
   windows_tests:
@@ -49,7 +49,7 @@ jobs:
           - name: shard 5 of 5
             shard-index: 4
     steps:
-      - uses: actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b
+      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
       - name: ${{ matrix.name }}
         run: scripts\verify_tests_on_main.bat --shards 5 --shard-index ${{ matrix.shard-index }}
   macos_tests:
@@ -62,6 +62,6 @@ jobs:
           - name: shard 2 of 2 
             shard-index: 1
     steps:
-      - uses: actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b
+      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
       - name: ${{ matrix.name }}
         run: scripts/verify_tests_on_main.sh --shards 2 --shard-index ${{ matrix.shard-index }}
