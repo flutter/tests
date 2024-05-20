@@ -79,17 +79,14 @@ Tests must fulfill the following criteria to be added:
 
 ## Running the tests locally
 
-To run these tests locally, check out this directory in a directory
-parallel to your `flutter` repository checkout, then, from this
-directory, run:
+To run these tests locally, run:
 
 ```
-pushd ../flutter/dev/customer_testing && flutter pub get && popd
-../flutter/bin/cache/dart-sdk/bin/dart ../flutter/dev/customer_testing/run_tests.dart --skip-template --verbose registry/*.test
+./scripts/verify_tests_on_main.sh --local-flutter
 ```
 
-The first command retrieves the Dart packages used by `customer_testing`
-and can be omitted for subsequent executions.
+This will run all the tests using the `flutter` command that is in the `PATH`.
+Use `./scripts/verify_tests_on_main.sh --help` to see more options.
 
 ## If a test is broken
 
