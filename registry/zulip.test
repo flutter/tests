@@ -1,0 +1,11 @@
+contact=greg@zulip.com
+contact=cbobbe@zulip.com
+
+fetch=git clone https://github.com/zulip/zulip-flutter.git tests
+fetch=git -C tests checkout 316cc1a7cc723bc01235cfa31f6cc5ae2836fda6
+
+update=.
+update=packages/zulip_plugin
+
+test=flutter analyze --no-fatal-infos
+test=flutter test
