@@ -73,13 +73,14 @@ else
   # Put Flutter at the start of the PATH because the OS image may contain
   # another version of Flutter.
   export PATH="$FLUTTER_DIR/bin:$FLUTTER_DIR/bin/cache/dart-sdk/bin:$PATH"
+
+  # In CI, run the tests a bunch of times to try to find flakes (tests that
+  # sometimes pass even though they should be failing).
   REPEAT=${REPEAT:-15}
 fi
 
 (cd "$FLUTTER_DIR/dev/customer_testing" && "$FLUTTER_DIR/bin/dart" pub get)
 
-# Now run the tests a bunch of times to try to find flakes (tests that sometimes pass
-# even though they should be failing).
 "$FLUTTER_DIR/bin/dart" "$FLUTTER_DIR/dev/customer_testing/run_tests.dart" \
   --shards "$SHARDS" --shard-index "$SHARD_INDEX" --skip-template --repeat="$REPEAT" \
   --verbose "${TESTS[@]}"
