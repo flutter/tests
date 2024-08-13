@@ -164,12 +164,11 @@ test=dart dev/extra_tests.dart
 test.windows=scripts\mytest.bat
 test.posix=scripts/mytest.sh
 
-# To test your tests, check out the flutter/flutter repository and
-# then, from the root of that repository, run:
+# To test your tests, run:
 #
-#   bin/flutter; cd dev/customer_testing; pub get; time ../../bin/cache/dart-sdk/bin/dart run_tests.dart --repeat=100 <path>
+#   scripts/verify_tests_on_main.sh --local-flutter --repeat 100 registry/NAME.test
 #
-# ...where <path> is the path to this file.
+# ...where registry/NAME.test is this file.
 #
 # This should run with no output, without failing, and should in total
 # take less than 15 minutes (a hundred runs of your tests taking just
