@@ -2,7 +2,7 @@ contact=greg@zulip.com
 contact=cbobbe@zulip.com
 
 fetch=git clone https://github.com/zulip/zulip-flutter.git tests
-fetch=git -C tests checkout eb1c8181b050f98326dfeb23f71eb0972ff0a72b
+fetch=git -C tests checkout cdbe14122eac145afaa86d19f152b5451e3c457b
 
 update=.
 update=packages/zulip_plugin
