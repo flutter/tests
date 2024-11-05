@@ -5,7 +5,6 @@ contact=piotr.maszota@leancode.pl
 fetch=git clone https://github.com/leancodepl/patrol.git tests
 fetch=git -C tests checkout a1c525606ffdc23c56b9866dccae808845fbc6d3
 
-update=packages/patrol
 update=packages/patrol_cli
 update=packages/patrol_finders
 
