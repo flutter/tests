@@ -3,9 +3,8 @@ contact=julia.borkowska@leancode.pl
 contact=piotr.maszota@leancode.pl
 
 fetch=git clone https://github.com/leancodepl/patrol.git tests
-fetch=git -C tests checkout eebd82809332c0ef02990b0257002d8434da738f
+fetch=git -C tests checkout 0a2273d235be74dfc17d1b67d640accc1e02ca38
 
-update=packages/patrol
 update=packages/patrol_cli
 update=packages/patrol_finders
 
