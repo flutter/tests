@@ -1,6 +1,6 @@
 contact=goddchen@gmail.com
 fetch=git clone https://github.com/Goddchen/dart-rfb.git tests
-fetch=git -C tests checkout 69d5639a1f9761f6e08d69cb679a924236945116
+fetch=git -C tests checkout 7cc445b190b159aaa4504875eba960e9e6ed5714
 update=.
 test=flutter analyze --no-fatal-infos
 test=flutter test
