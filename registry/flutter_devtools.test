@@ -3,7 +3,7 @@
 contact=dart-devtools-eng@google.com
 
 fetch=git -c core.longPaths=true clone https://github.com/kenzieschmoll/devtools.git tests
-fetch=git -c core.longPaths=true -C tests checkout 787a02490d3aff43f4299ca1d465cf5ef19ad581
+fetch=git -c core.longPaths=true -C tests checkout 730f93d5fa5f28b02e164de1d960a939d9698311
 
 setup.linux=./tool/flutter_customer_tests/setup.sh >> output.txt
 
