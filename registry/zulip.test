@@ -4,7 +4,7 @@ contact=cbobbe@zulip.com
 fetch=git clone https://github.com/zulip/zulip-flutter.git tests
 fetch=git -C tests checkout 0bfa79d23fc9fcf5ce0cc5a21540434f526838d9
 
-setup.linux=TERM=dumb sudo apt install -y libsqlite3-dev
+setup.linux=sudo apt install -y libsqlite3-dev
 
 update=.
 update=packages/zulip_plugin
