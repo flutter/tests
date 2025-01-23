@@ -11,6 +11,6 @@ To learn more about code review, see our documentation on Tree Hygiene: https://
 > to verify that no breaking changes have been introduced (in the "customer_testing" shards). Your merged PR is _not_ automatically run in the
 > Flutter CI tree.
 >
-> Once merged, a PR must be sent updating `dev/customer_testing/tests.version` with the latest SHA.
+> After merging this PR, you must send another PR to flutter/flutter updating `dev/customer_testing/tests.version` in that repo with the latest git commit SHA of the flutter/test repo.
 >
 > See <https://github.com/flutter/flutter/pull/162048> for details.
