@@ -1,9 +1,10 @@
+contact=piotr.denert@leancode.pl
+contact=piotr.maszota@leancode.pl
 contact=mateusz.wojtczak@leancode.pl
 contact=julia.borkowska@leancode.pl
-contact=piotr.maszota@leancode.pl
 
 fetch=git clone https://github.com/leancodepl/patrol.git tests
-fetch=git -C tests checkout a1c525606ffdc23c56b9866dccae808845fbc6d3
+fetch=git -C tests checkout 15cd43d5f795f6a4411621b40ec7f4d76e95868a
 
 update=packages/patrol_cli
 update=packages/patrol_finders
