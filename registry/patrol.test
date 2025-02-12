@@ -4,9 +4,10 @@ contact=mateusz.wojtczak@leancode.pl
 contact=julia.borkowska@leancode.pl
 
 fetch=git clone https://github.com/leancodepl/patrol.git tests
-fetch=git -C tests checkout 15cd43d5f795f6a4411621b40ec7f4d76e95868a
+fetch=git -C tests checkout 8431a501f7de8bec49d4937bd4018266e7ba5ab7
 
 update=packages/patrol_cli
 update=packages/patrol_finders
 
-test=scripts/flutter_test_repo_test.sh
+test.posix=scripts/flutter_test_repo_test.sh
+test.windows=scripts\flutter_test_repo_test.bat
