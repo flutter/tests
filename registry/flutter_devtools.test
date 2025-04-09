@@ -3,7 +3,11 @@
 contact=dart-devtools-eng@google.com
 
 fetch=git -c core.longPaths=true clone https://github.com/flutter/devtools.git tests
-fetch=git -c core.longPaths=true -C tests checkout 3601dafcbbc8ab9c7b7fb210e763140d6e755762
+
+# NOTE: this commit hash should also match the hash in flutter_devtools_analysis.test.
+# The analysis and testing for DevTools have been split into two different
+# registry to speed up performance.
+fetch=git -c core.longPaths=true -C tests checkout 67a84729537ea5011f5ee909613133006eb47e92
 
 setup.linux=./tool/flutter_customer_tests/setup.sh >> output.txt
 
@@ -13,7 +17,7 @@ update=packages/devtools_extensions
 update=packages/devtools_shared
 update=packages/devtools_test
 
-test.linux=./tool/flutter_customer_tests/analyze.sh
+# Analysis of the DevTools codebase is performed in flutter_devtools_analysis.test.
 
 # TODO(kenz): if we can exclude golden image tests (or switch to Mock Canvas?)
 # run these tests on all platforms.

@@ -1,7 +1,7 @@
 contact=marcglasberg@gmail.com
 contact=pascal@pascalwelsch.com
 fetch=git clone https://github.com/marcglasberg/assorted_layout_widgets.git tests
-fetch=git -C tests checkout 3a10ada7950e89feca6a13f66492a5fc2913c5bb
+fetch=git -C tests checkout e32fabf854927bb4c0c0284624bf30c20c4aab8d
 update=.
 test=flutter analyze --no-fatal-infos
 test=flutter test
