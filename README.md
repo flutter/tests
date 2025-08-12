@@ -91,7 +91,7 @@ Use `./scripts/verify_tests_on_main.sh --help` to see more options.
 The point of these tests is to make sure we don't break existing code,
 while still being able to make improvements to Flutter APIs.
 
-If you find that a PR you have created in flutter/flutter causes one
+If you find that a PR you have created in flutter/flutter causes one of
 these tests to fail, you have the following options:
 
 1. Change your PR so that the test no longer fails. This is the
@@ -100,7 +100,7 @@ these tests to fail, you have the following options:
    with without the backwards-compatibility constraint? That's good.
    Is the resulting API something that, as soon as you see it, you
    think "why?" or "that's weird"? That's bad. Consider the advice in
-   the Style guide:
+   the style guide:
    https://github.com/flutter/flutter/blob/master/docs/contributing/Style-guide-for-Flutter-repo.md
 
 2. Go through the breaking change process, as documented here:
@@ -110,13 +110,16 @@ these tests to fail, you have the following options:
    files), help them fix their code, and update this repository to use
    the new version of their tests, in addition to the steps described
    on the wiki. You will also need to land your change in two parts,
-   so that people have time to migrate (a "soft-breaking" change).
+   so that people have time to migrate (a "soft-breaking" change). See Flutter's
+   [deprecation policy](https://github.com/flutter/flutter/blob/main/docs/contributing/Tree-hygiene.md#deprecations)
+   for more.
 
 3. Remove the test in question. This is by far the least ideal
    solution. To go down this path, we must first establish that one of
    the following is true:
 
-    - the people listed as contacts for the test are not responsive (within 72 hours).
+    - the people listed as contacts for the test are not responsive and a plan
+      to fix the failure has not been agreed upon within 72 hours.
 
     - the test is poorly written (e.g. it contains a race condition or
       relies on assumptions that violate clearly documented API
