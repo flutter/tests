@@ -112,7 +112,7 @@ these tests to fail, you have the following options:
    on the wiki. You will also need to land your change in two parts,
    so that people have time to migrate (a "soft-breaking" change). See Flutter's
    [deprecation policy](https://github.com/flutter/flutter/blob/main/docs/contributing/Tree-hygiene.md#deprecations)
-   for more.
+   for more details.
 
 3. Remove the test in question. This is by far the least ideal
    solution. To go down this path, we must first establish that one of
