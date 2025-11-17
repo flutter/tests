@@ -7,7 +7,7 @@ fetch=git -c core.longPaths=true clone https://github.com/flutter/devtools.git t
 # NOTE: this commit hash should also match the hash in flutter_devtools.test.
 # The analysis and testing for DevTools have been split into two different
 # registry to speed up performance.
-fetch=git -c core.longPaths=true -C tests checkout 9701f74f2159e15045ead836e4336479a05510d5
+fetch=git -c core.longPaths=true -C tests checkout ed691cae7fb35f6c77950b0e13746893715e4ec8
 
 # Mock generation required. Otherwise the test code will show analysis errors.
 setup.linux=./tool/flutter_customer_tests/setup.sh >> output.txt
