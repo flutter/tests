@@ -4,7 +4,7 @@ contact=mateusz.wojtczak@leancode.pl
 contact=julia.borkowska@leancode.pl
 
 fetch=git clone https://github.com/leancodepl/patrol.git tests
-fetch=git -C tests checkout b8bcebf96ff13e37fdc5474804d68e2352e472a4
+fetch=git -C tests checkout e19cf0de7edd8303f6bd0d93df0a4349221b4b78
 
 update=packages/patrol_cli
 update=packages/patrol_finders
