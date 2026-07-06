@@ -1,0 +1,20 @@
+# Tests from https://github.com/flame-engine/flame
+#
+# Flame is a monorepo managed as a pub workspace, so the "update" step below
+# (flutter pub get at the repository root) resolves every member package.
+#
+# The test command runs scripts/customer_testing.dart in the Flame repository,
+# which works identically on every platform. It runs flutter analyze over the
+# whole workspace everywhere; the full per-package "flutter test" suites run on
+# Linux only, because Flame's golden and rendering tests are platform-sensitive
+# (this mirrors flutter/packages' own registry entry).
+
+contact=contact@blue-fire.xyz
+contact=lukas@blue-fire.xyz
+
+fetch=git clone https://github.com/flame-engine/flame.git tests
+fetch=git -C tests checkout 74721f093645603001b205ca9c36c94c5552a1fd
+
+update=.
+
+test=dart run scripts/customer_testing.dart
