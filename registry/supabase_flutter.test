@@ -9,7 +9,7 @@
 contact=lukas.klingsbo@supabase.io
 
 fetch=git clone https://github.com/supabase/supabase-flutter.git tests
-fetch=git -C tests checkout 61b2118c7479d26d0a267dd06396b7d9e1e1809f
+fetch=git -C tests checkout afad09decbbf4c0ccd91c5a147041646b26830fc
 
 update=.
 
