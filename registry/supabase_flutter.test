@@ -1,0 +1,16 @@
+# Tests from https://github.com/supabase/supabase-flutter
+#
+# supabase-flutter is a pub workspace, so the "update" step below (flutter pub get at
+# the repository root) resolves every member package. The test step runs
+# scripts/customer_testing.dart, which runs `flutter analyze --no-fatal-infos` over the
+# whole workspace and `flutter test` in packages/supabase_flutter. The other packages
+# are excluded because their tests require a live Supabase backend.
+
+contact=lukas.klingsbo@supabase.io
+
+fetch=git clone https://github.com/supabase/supabase-flutter.git tests
+fetch=git -C tests checkout afad09decbbf4c0ccd91c5a147041646b26830fc
+
+update=.
+
+test=dart run scripts/customer_testing.dart
