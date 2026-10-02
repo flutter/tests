@@ -3,5 +3,5 @@ fetch=git clone https://github.com/rrousselGit/provider.git tests
 fetch=git -C tests checkout 3ed4c6d6b1700c08256f25a034bb93f943bd7236
 update=packages/provider
 test=flutter analyze --no-fatal-infos packages/provider/lib packages/provider/test/null_safe
-test.posix=sh -c cd${IFS}"$0"&&"$@" packages/provider flutter test test/null_safe --name '^(?!MultiProvider Supports a large number of providers$)'
-test.windows=cd packages/provider && flutter test test/null_safe --name '^(?!MultiProvider Supports a large number of providers$)'
+test.posix=cd packages/provider && flutter test test/null_safe --name '^(?!MultiProvider Supports a large number of providers$)'
+test.windows=cd packages/provider && flutter test test/null_safe --name "^(?!MultiProvider Supports a large number of providers$)"
