@@ -1,0 +1,14 @@
+% ed /tmp/funs/yp
+25
+w
+#! /usr/local/bin/zsh
+.
+i
+60
+q
+% >/tmp/funs/yp
+#! /usr/local/bin/zsh
+ypmatch $1 passwd.byname
+% /tmp/funs/yp sukthnkr
+sukthnkr:*:1267:35:Rahul Sukthankar:/u/sukthnkr:/usr/princeton/bin/tcsh
+Now other people, who may not use zsh, or who don't
