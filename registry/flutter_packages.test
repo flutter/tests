@@ -4,12 +4,20 @@
 contact=jinhangyu@google.com
 update=packages/animations
 
+# For cupertino_ui package
+contact=tongmu@google.com
+update=packages/cupertino_ui
+
+# For material_ui package
+contact=quncheng@google.com
+update=packages/material_ui
+
 # For rfw package
 contact=ian@hixie.ch
 update=packages/rfw
 
 fetch=git -c core.longPaths=true clone https://github.com/flutter/packages.git tests
-fetch=git -c core.longPaths=true -C tests checkout 409793bcb784b9464def8698557005fb8851a9e6
+fetch=git -c core.longPaths=true -C tests checkout 29611ece714376f5acccaffce197d18b14b31b33
 test.windows=set USE_FLUTTER_TEST_FONT=1
 test.windows=.\customer_testing.bat
 test.posix=env USE_FLUTTER_TEST_FONT=1 ./customer_testing.sh
