@@ -4,7 +4,7 @@ contact=matt@duobase.io
 contact=joe@duobase.io
 
 fetch=git clone https://github.com/duobaseio/forui.git tests
-fetch=git -C tests checkout 5968a032480a2bca48373b3402fe80c13c8e72cf
+fetch=git -C tests checkout eae9314bf29169635a608197efa6c40b6167ceff
 
 setup.windows=.\customer_test_setup.bat
 setup.posix=./customer_test_setup.sh
